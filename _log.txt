@@ -1,0 +1,636 @@
+[    1s] Memory limit set to 198059786KB
+[    1s] Using BUILD_ROOT=/mnt/workers/root_1
+[    1s] Using BUILD_ARCH=riscv64
+[    1s] 
+[    2s] 
+[    2s] riscv64-oe2309-iscas-r750-docker-chroot-01-24c70g started "build opengauss-dcf.spec" at Mon Mar 18 06:56:50 UTC 2024.
+[    2s] 
+[    2s] Building python-cotengra-test for project 'openEuler:23.09:fix' repository 'standard' arch 'riscv64' srcmd5 '298cc9be688ec6d81222ff66b65f98c4'
+[    2s] 
+[    2s] processing recipe /mnt/workers/root_1/.build-srcdir/opengauss-dcf.spec ...
+[    4s] running changelog2spec --target rpm --file /mnt/workers/root_1/.build-srcdir/opengauss-dcf.spec
+[    4s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --clean --rpmlist /mnt/workers/root_1/.build.rpmlist /mnt/workers/root_1/.build-srcdir/opengauss-dcf.spec build ...
+[   15s] cycle: filesystem -> bash
+[   15s]   breaking dependency filesystem -> bash
+[   15s] cycle: rpm-libs -> rpm
+[   15s]   breaking dependency rpm -> rpm-libs
+[   15s] [1/29] preinstalling filesystem...
+[   16s] [2/29] preinstalling glibc...
+[   19s] [3/29] preinstalling libatomic...
+[   19s] [4/29] preinstalling libdb...
+[   22s] [5/29] preinstalling libgpg-error...
+[   22s] [6/29] preinstalling lz4...
+[   23s] [7/29] preinstalling pcre2...
+[   24s] [8/29] preinstalling xz-libs...
+[   25s] [9/29] preinstalling zlib...
+[   25s] [10/29] preinstalling zstd...
+[   26s] [11/29] preinstalling attr...
+[   27s] [12/29] preinstalling bash...
+[   28s] [13/29] preinstalling pesign-obs-integration...
+[   29s] [14/29] preinstalling selinux-policy-targeted...
+[   33s] [15/29] preinstalling bzip2...
+[   33s] [16/29] preinstalling cmake...
+[   38s] [17/29] preinstalling compat-openssl11-libs...
+[   39s] [18/29] preinstalling libacl...
+[   40s] [19/29] preinstalling libcap...
+[   40s] [20/29] preinstalling libgcrypt...
+[   41s] [21/29] preinstalling libselinux...
+[   42s] [22/29] preinstalling lua...
+[   42s] [23/29] preinstalling openssl-libs...
+[   44s] [24/29] preinstalling popt...
+[   45s] [25/29] preinstalling systemd-libs...
+[   45s] [26/29] preinstalling rpm...
+[   46s] [27/29] preinstalling dbus-libs...
+[   47s] [28/29] preinstalling rpm-libs...
+[   48s] [29/29] preinstalling digest-list-tools...
+[   50s] initializing rpm db...
+[   54s] reordering...cycle: coreutils -> bash
+[   54s]   breaking dependency coreutils -> bash
+[   54s] cycle: coreutils -> info
+[   54s]   breaking dependency coreutils -> info
+[   54s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp -> pkgconf
+[   54s]   breaking dependency coreutils -> gmp
+[   54s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[   54s]   breaking dependency coreutils -> glibc
+[   54s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[   54s]   breaking dependency coreutils -> libacl
+[   54s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[   54s]   breaking dependency coreutils -> attr
+[   54s] cycle: coreutils -> libcap
+[   54s]   breaking dependency libcap -> coreutils
+[   54s] cycle: coreutils -> libcap -> bash
+[   54s]   breaking dependency coreutils -> libcap
+[   54s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[   54s]   breaking dependency coreutils -> openssl-libs
+[   54s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libselinux
+[   54s]   breaking dependency filesystem -> coreutils
+[   54s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> libselinux
+[   54s]   breaking dependency filesystem -> bash
+[   54s] cycle: glibc -> basesystem -> filesystem -> setup -> openEuler-release -> coreutils -> libselinux
+[   54s]   breaking dependency filesystem -> setup
+[   54s] cycle: glibc -> basesystem -> filesystem -> ncurses-libs
+[   54s]   breaking dependency glibc -> basesystem
+[   54s] cycle: glibc -> glibc-common -> bash -> coreutils -> libselinux
+[   54s]   breaking dependency glibc-common -> bash
+[   54s] cycle: glibc -> glibc-common -> coreutils -> libselinux
+[   54s]   breaking dependency libselinux -> glibc
+[   54s] cycle: glibc -> glibc-common -> coreutils -> libselinux -> pcre2
+[   54s]   breaking dependency glibc-common -> coreutils
+[   54s] cycle: glibc -> glibc-common
+[   54s]   breaking dependency glibc-common -> glibc
+[   54s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[   54s]   breaking dependency pcre2 -> glibc
+[   54s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[   54s]   breaking dependency readline -> glibc
+[   54s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   54s]   breaking dependency libselinux -> pcre2
+[   54s] cycle: libselinux -> libsepol -> coreutils
+[   54s]   breaking dependency libsepol -> coreutils
+[   54s] cycle: libselinux -> libsepol -> bash -> coreutils
+[   54s]   breaking dependency bash -> coreutils
+[   54s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> ncurses-libs
+[   54s]   breaking dependency bash -> filesystem
+[   54s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash
+[   54s]   breaking dependency libsepol -> bash
+[   54s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[   54s]   breaking dependency glibc -> glibc-common
+[   54s] cycle: glibc -> filesystem -> ncurses-libs
+[   54s]   breaking dependency ncurses-libs -> glibc
+[   54s] cycle: openssl-libs -> crypto-policies -> python3
+[   54s]   breaking dependency python3 -> openssl-libs
+[   54s] cycle: crypto-policies -> python3 -> libnsl2 -> libtirpc -> krb5-libs
+[   54s]   breaking dependency python3 -> libnsl2
+[   54s] cycle: crypto-policies -> python3 -> libtirpc -> krb5-libs
+[   54s]   breaking dependency python3 -> libtirpc
+[   54s] cycle: pam -> libpwquality
+[   54s]   breaking dependency pam -> libpwquality
+[   54s] cycle: rpm -> rpm-libs
+[   54s]   breaking dependency rpm -> rpm-libs
+[   54s] cycle: perl-libs -> perl-Carp
+[   54s]   breaking dependency perl-libs -> perl-Carp
+[   54s] cycle: perl-libs -> perl-Exporter
+[   54s]   breaking dependency perl-libs -> perl-Exporter
+[   54s] cycle: glibc-devel -> libxcrypt-devel
+[   54s]   breaking dependency glibc-devel -> libxcrypt-devel
+[   54s] cycle: perl-Carp -> perl-Exporter
+[   54s]   breaking dependency perl-Exporter -> perl-Carp
+[   54s] cycle: cmake-data -> cmake
+[   54s]   breaking dependency cmake -> cmake-data
+[   54s] cycle: nss-util -> nss
+[   54s]   breaking dependency nss -> nss-util
+[   54s] cycle: nss-softokn -> nss-util -> nss
+[   54s]   breaking dependency nss -> nss-softokn
+[   54s] cycle: selinux-policy-targeted -> selinux-policy
+[   54s]   breaking dependency selinux-policy -> selinux-policy-targeted
+[   54s] cycle: perl-PathTools -> perl
+[   54s]   breaking dependency perl -> perl-PathTools
+[   54s] cycle: perl-File-Path -> perl-PathTools -> perl
+[   54s]   breaking dependency perl -> perl-File-Path
+[   54s] cycle: perl -> perl-constant
+[   54s]   breaking dependency perl -> perl-constant
+[   54s] cycle: perl-PathTools -> perl -> perl-File-Temp
+[   54s]   breaking dependency perl -> perl-File-Temp
+[   54s] done
+[   54s] querying package ids...
+[   69s] [1/189] installing cmake-filesystem-3.24.3-1.oe2309
+[   69s] [2/189] installing fuse-common-3.13.0-2.oe2309
+[   70s] [3/189] installing kernel-headers-6.4.0-10.1.0.20.oe2309
+[   71s] [4/189] installing ncurses-base-6.4-6.oe2309
+[   72s] [5/189] installing openEuler-gpg-keys-1.0-3.2.oe2309
+[   72s] [6/189] installing python-setuptools-68.0.0-1.oe2309
+[   73s] [7/189] installing qt5-srpm-macros-5.15.10-2.oe2309
+[   73s] [8/189] installing tzdata-2022g-5.oe2309
+[   74s] [9/189] installing openEuler-repos-1.0-3.2.oe2309
+[   75s] [10/189] installing ncurses-libs-6.4-6.oe2309
+[   76s] [11/189] installing readline-8.2-2.oe2309
+[   76s] [12/189] installing filesystem-3.16-5.oe2309
+[   77s] warning: group mail does not exist - using root
+[   78s] [13/189] installing emacs-filesystem-1:28.2-5.oe2309
+[   78s] [14/189] installing libgcc-12.3.1-16.oe2309
+[   78s] [15/189] installing pcre2-10.42-1.oe2309
+[   79s] [16/189] installing glibc-2.38-8.oe2309
+[   82s] [17/189] installing brotli-1.0.9-3.oe2309
+[   82s] [18/189] installing cjson-1.7.15-1.oe2309
+[   83s] [19/189] installing cpio-2.14-2.oe2309
+[   84s] [20/189] installing diffutils-3.10-1.oe2309
+[   84s] [21/189] installing expat-2.5.0-1.oe2309
+[   85s] [22/189] installing jansson-2.14-3.oe2309
+[   85s] [23/189] installing json-c-0.17-1.oe2309
+[   86s] [24/189] installing keyutils-libs-1.6.3-5.oe2309
+[   86s] [25/189] installing libatomic-12.3.1-16.oe2309
+[   87s] [26/189] installing libcap-ng-0.8.3-1.oe2309
+[   87s] [27/189] installing libev-4.33-3.oe2309
+[   88s] [28/189] installing libffi-3.4.4-3.oe2309
+[   88s] [29/189] installing libgomp-12.3.1-16.oe2309
+[   89s] [30/189] installing libgpg-error-1.47-1.oe2309
+[   89s] [31/189] installing libnghttp2-1.55.1-1.oe2309
+[   90s] [32/189] installing libsigsegv-2.14-1.oe2309
+[   90s] [33/189] installing libsmartcols-2.39.1-3.oe2309
+[   91s] [34/189] installing libtasn1-4.19.0-1.oe2309
+[   91s] [35/189] installing libtool-ltdl-2.4.7-3.oe2309
+[   92s] [36/189] installing libunistring-1.1-2.oe2309
+[   93s] [37/189] installing libuuid-2.39.1-3.oe2309
+[   93s] [38/189] installing libuv-1:1.44.2-1.oe2309
+[   94s] [39/189] installing libxcrypt-4.4.36-1.oe2309
+[   94s] [40/189] installing lz4-1.9.4-2.oe2309
+[   95s] [41/189] installing nspr-4.35.0-2.oe2309
+[   95s] [42/189] installing pkgconf-1.9.5-1.oe2309
+[   96s] [43/189] installing which-2.21-15.oe2309
+[   96s] [44/189] installing xz-libs-5.4.4-1.oe2309
+[   97s] [45/189] installing zlib-1.2.13-2.oe2309
+[   97s] [46/189] installing attr-2.5.1-4.oe2309
+[   98s] [47/189] installing libstdc++-12.3.1-16.oe2309
+[   99s] [48/189] installing gdbm-1:1.23-2.oe2309
+[  100s] [49/189] installing libsepol-3.5-1.oe2309
+[  100s] [50/189] installing bash-5.2.15-4.oe2309
+[  102s] [51/189] installing libstdc++-devel-12.3.1-16.oe2309
+[  105s] [52/189] installing audit-libs-1:3.1.1-1.oe2309
+[  106s] [53/189] installing cjson-devel-1.7.15-1.oe2309
+[  106s] [54/189] installing file-libs-5.44-1.oe2309
+[  107s] [55/189] installing gmp-1:6.3.0-5.oe2309
+[  108s] [56/189] installing libacl-2.3.1-1.oe2309
+[  108s] [57/189] installing libgcrypt-1.10.2-1.oe2309
+[  109s] [58/189] installing libpng-2:1.6.40-1.oe2309
+[  110s] [59/189] installing lz4-devel-1.9.4-2.oe2309
+[  110s] [60/189] installing p11-kit-0.25.0-1.oe2309
+[  111s] [61/189] installing cyrus-sasl-lib-2.1.28-1.oe2309
+[  112s] [62/189] installing fuse-2.9.9-11.oe2309
+[  112s] [63/189] installing gc-8.2.2-1.oe2309
+[  113s] [64/189] installing libdb-5.3.28-41.oe2309
+[  116s] [65/189] installing libselinux-3.5-2.oe2309
+[  116s] [66/189] installing libxml2-2.11.4-3.oe2309
+[  117s] [67/189] installing zstd-1.5.5-1.oe2309
+[  118s] [68/189] installing pcre-8.45-5.oe2309
+[  119s] [69/189] installing perl-libs-4:5.38.0-2.oe2309
+[  121s] [70/189] installing ncurses-6.4-6.oe2309
+[  122s] [71/189] installing perl-parent-1:0.241-1.oe2309
+[  123s] [72/189] installing isl-0.24-2.oe2309
+[  124s] [73/189] installing mpfr-4.2.0-2.oe2309
+[  124s] [74/189] installing perl-Exporter-5.77-1.oe2309
+[  125s] [75/189] installing zstd-devel-1.5.5-1.oe2309
+[  125s] [76/189] installing file-5.44-1.oe2309
+[  126s] [77/189] installing patch-2.7.6-20.oe2309
+[  126s] [78/189] installing sed-4.9-3.oe2309
+[  126s] [79/189] installing glibc-common-2.38-8.oe2309
+[  130s] [80/189] installing coreutils-9.3-2.oe2309
+[  134s] [81/189] installing crontabs-1.11-23.oe2309
+[  134s] [82/189] installing elfutils-default-yama-scope-0.189-3.oe2309
+[  135s] [83/189] installing perl-Carp-1.50-419.oe2309
+[  135s] [84/189] installing publicsuffix-list-20230701-1.oe2309
+[  136s] [85/189] installing bzip2-1.0.8-6.oe2309
+[  137s] [86/189] installing gzip-1.12-4.oe2309
+[  137s] [87/189] installing libboundscheck-v1.1.11-6.oe2309
+[  138s] [88/189] installing libmpc-1.3.1-1.oe2309
+[  138s] [89/189] installing perl-Digest-MD5-2.58-2.oe2309
+[  139s] [90/189] installing popt-1.19-2.oe2309
+[  140s] [91/189] installing grep-3.11-1.oe2309
+[  141s] [92/189] installing info-7.0.3-3.oe2309
+[  142s] [93/189] installing libblkid-2.39.1-3.oe2309
+[  143s] [94/189] installing libidn2-2.3.3-2.oe2309
+[  143s] [95/189] installing slang-2.3.3-2.oe2309
+[  145s] [96/189] installing tar-2:1.35-2.oe2309
+[  146s] [97/189] installing tcl-1:8.6.13-2.oe2309
+[  148s] [98/189] installing jsoncpp-1.9.5-3.oe2309
+[  149s] [99/189] installing lua-5.4.6-1.oe2309
+[  150s] [100/189] installing glibc-devel-2.38-8.oe2309
+[  154s] [101/189] installing gawk-5.2.0-3.oe2309
+[  155s] [102/189] installing guile-5:2.2.7-3.oe2309
+[  161s] [103/189] installing zip-3.0-30.oe2309
+[  161s] [104/189] installing libfdisk-2.39.1-3.oe2309
+[  162s] [105/189] installing libxcrypt-devel-4.4.36-1.oe2309
+[  163s] [106/189] installing newt-0.52.23-1.oe2309
+[  163s] [107/189] installing bc-1.07.1-12.oe2309
+[  164s] [108/189] installing libmount-2.39.1-3.oe2309
+[  165s] [109/189] installing unzip-6.0-51.oe2309
+[  165s] [110/189] installing cracklib-2.9.11-1.oe2309
+[  168s] [111/189] installing e2fsprogs-1.47.0-2.oe2309
+[  170s] [112/189] installing elfutils-libelf-0.189-3.oe2309
+[  171s] [113/189] installing findutils-2:4.9.0-1.oe2309
+[  171s] [114/189] installing libsemanage-3.5-1.oe2309
+[  172s] [115/189] installing sqlite-3.37.2-5.oe2309
+[  174s] [116/189] installing xz-5.4.4-1.oe2309
+[  174s] [117/189] installing libpsl-0.21.2-1.oe2309
+[  175s] [118/189] installing logrotate-3.20.1-2.oe2309
+[  176s] [119/189] installing make-1:4.4.1-1.oe2309
+[  177s] [120/189] installing perl-Scalar-List-Utils-4:1.63-1.oe2309
+[  178s] [121/189] installing cpp-12.3.1-16.oe2309
+[  183s] [122/189] installing dwz-0.15-1.oe2309
+[  184s] [123/189] installing openEuler-release-23.09-54.oe2309
+[  185s] [124/189] installing chkconfig-1.25-1.oe2309
+[  186s] [125/189] installing elfutils-libs-0.189-3.oe2309
+[  187s] [126/189] installing glib2-2.76.4-1.oe2309
+[  189s] [127/189] installing setup-2.14.3-4.oe2309
+[  190s] [128/189] installing binutils-2.40-3.oe2309
+[  194s] [129/189] installing elfutils-0.189-3.oe2309
+[  195s] [130/189] installing p11-kit-trust-0.25.0-1.oe2309
+[  196s] [131/189] installing babeltrace-1.5.8-6.oe2309
+[  197s] [132/189] installing basesystem-12-3.oe2309
+[  197s] [133/189] installing ca-certificates-2023.2.60-1.oe2309
+[  208s] [134/189] installing gcc-12.3.1-16.oe2309
+[  219s] [135/189] installing python-pip-wheel-23.1.2-3.oe2309
+[  220s] [136/189] installing gcc-c++-12.3.1-16.oe2309
+[  224s] [137/189] installing gcc-12-compat-1.0-1.1
+[  225s] [138/189] installing python3-3.11.4-2.oe2309
+[  232s] [139/189] installing crypto-policies-20200619-4.git781bbd4.oe2309
+[  233s] [140/189] installing gdb-headless-12.1-7.oe2309
+[  236s] [141/189] installing compat-openssl11-libs-1:1.1.1m-8.oe2309
+[  237s] [142/189] installing openssl-libs-1:3.0.9-5.oe2309
+[  239s] [143/189] installing nss-3.89.0-2.oe2309
+[  241s] [144/189] installing debugedit-5.0-7.oe2309
+[  242s] [145/189] installing libevent-2.1.12-9.oe2309
+[  243s] [146/189] installing openssl-devel-1:3.0.9-5.oe2309
+[  249s] [147/189] installing openldap-2.6.5-4.oe2309
+[  250s] [148/189] installing fipscheck-1.5.0-10.oe2309
+[  250s] [149/189] installing nss-util-3.89.0-2.oe2309
+[  252s] [150/189] installing openssl-1:3.0.9-5.oe2309
+[  252s] [151/189] installing libarchive-3.7.1-1.oe2309
+[  253s] [152/189] installing libverto-0.3.2-3.oe2309
+[  254s] [153/189] installing nss-softokn-3.89.0-2.oe2309
+[  255s] [154/189] installing krb5-libs-1.21.1-1.oe2309
+[  256s] [155/189] installing libtirpc-1.3.3-3.oe2309
+[  257s] [156/189] installing libssh-0.10.5-1.oe2309
+[  258s] [157/189] installing libnsl2-2.0.0-5.oe2309
+[  259s] [158/189] installing libcurl-8.1.2-4.oe2309
+[  259s] [159/189] installing curl-8.1.2-4.oe2309
+[  260s] [160/189] installing tpm2-tss-3.2.2-1.oe2309
+[  261s] [161/189] installing pam-1.5.3-1.oe2309
+[  263s] [162/189] installing ima-evm-utils-libs-1.5-1.oe2309
+[  263s] [163/189] installing libpwquality-1.4.5-1.oe2309
+[  264s] [164/189] installing libcap-2.69-1.oe2309
+[  265s] [165/189] installing shadow-subid-devel-2:4.13-5.oe2309
+[  266s] [166/189] installing systemd-libs-253-5.oe2309
+[  267s] Detected system with incompatible nobody defined, creating /etc/systemd/dont-synthesize-nobody
+[  267s] [167/189] installing shadow-2:4.13-5.oe2309
+[  269s] [168/189] installing rpm-4.18.1-8.oe2309
+[  270s] [169/189] installing efi-srpm-macros-4-9.oe2309
+[  271s] [170/189] installing cmake-rpm-macros-3.24.3-1.oe2309
+[  271s] [171/189] installing dbus-libs-1:1.14.8-1.oe2309
+[  272s] [172/189] installing libutempter-1.2.1-3.oe2309
+[  273s] [173/189] installing rpm-libs-4.18.1-8.oe2309
+[  274s] [174/189] installing digest-list-tools-0.3.95-13.oe2309
+[  276s] [175/189] installing openEuler-rpm-config-30-43.oe2309
+[  276s] [176/189] installing cmake-3.24.3-1.oe2309
+[  283s] [177/189] installing util-linux-2.39.1-3.oe2309
+[  286s] [178/189] installing cmake-data-3.24.3-1.oe2309
+[  289s] [179/189] installing perl-4:5.38.0-2.oe2309
+[  292s] [180/189] installing policycoreutils-3.5-2.oe2309
+[  293s] [181/189] installing rpm-build-4.18.1-8.oe2309
+[  293s] [182/189] installing perl-constant-1.33-422.oe2309
+[  294s] [183/189] installing pesign-obs-integration-10.1-4.oe2309
+[  295s] [184/189] installing selinux-policy-38.21-1.oe2309
+[  296s] [185/189] installing gcc_secure-1.0-0.12.oe2309
+[  297s] [186/189] installing selinux-policy-targeted-38.21-1.oe2309
+[  301s] [187/189] installing perl-PathTools-3.89-1.oe2309
+[  302s] [188/189] installing perl-File-Path-2.18-2.oe2309
+[  302s] [189/189] installing perl-File-Temp-1:0.2311-3.oe2309
+[  303s] now finalizing build dir...
+[  310s] -----------------------------------------------------------------
+[  310s] I have the following modifications for opengauss-dcf.spec:
+[  310s] 3c3
+[  310s] < Release:          6
+[  310s] ---
+[  310s] > Release:          51.1
+[  315s] -----------------------------------------------------------------
+[  315s] ----- building opengauss-dcf.spec (user abuild)
+[  315s] -----------------------------------------------------------------
+[  315s] -----------------------------------------------------------------
+[  317s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --undefine _enable_debug_packages --define 'disturl obs://rvpt-obs-main/openEuler:23.09:fix/standard/298cc9be688ec6d81222ff66b65f98c4-python-cotengra-test' /home/abuild/rpmbuild/SOURCES/opengauss-dcf.spec
+[  317s] warning: %patchN is deprecated (2 usages found), use %patch N (or %patch -P N)
+[  317s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.sHv3h3
+[  317s] + umask 022
+[  317s] + cd /home/abuild/rpmbuild/BUILD
+[  317s] + cd /home/abuild/rpmbuild/BUILD
+[  317s] + rm -rf DCF-1.0.0
+[  317s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/DCF-1.0.0.tar.gz
+[  318s] + STATUS=0
+[  318s] + '[' 0 -ne 0 ']'
+[  318s] + cd DCF-1.0.0
+[  318s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  318s] + echo 'Patch #1 (01-boundcheck.patch):'
+[  318s] Patch #1 (01-boundcheck.patch):
+[  318s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  318s] patching file CMakeLists.txt
+[  318s] patching file src/dcf_interface.c
+[  318s] patching file src/metadata/metadata.c
+[  318s] patching file src/utils/util_profile_stat.h
+[  318s] + echo 'Patch #4 (DCF-1.0.0-add-riscv64-support.patch):'
+[  318s] Patch #4 (DCF-1.0.0-add-riscv64-support.patch):
+[  318s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  318s] patching file CMakeLists.txt
+[  318s] patching file src/common/cm_concurrency/cm_spinlock.h
+[  318s] patching file src/common/cm_concurrency/cm_thread.c
+[  318s] patching file src/common/cm_utils/cm_checksum.h
+[  318s] patching file src/common/cm_utils/cm_memory.h
+[  318s] + RPM_EC=0
+[  318s] ++ jobs -p
+[  318s] + exit 0
+[  318s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.isOmVF
+[  318s] + umask 022
+[  318s] + cd /home/abuild/rpmbuild/BUILD
+[  318s] + cd DCF-1.0.0
+[  318s] + cmake -DCMAKE_BUILD_TYPE=Release -DUSE32BIT=OFF -DTEST=OFF -DENABLE_EXPORT_API=OFF CMakeLists.txt
+[  321s] -- The C compiler identification is GNU 12.3.1
+[  323s] -- The CXX compiler identification is GNU 12.3.1
+[  324s] -- Detecting C compiler ABI info
+[  327s] -- Detecting C compiler ABI info - done
+[  328s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  328s] -- Detecting C compile features
+[  328s] -- Detecting C compile features - done
+[  328s] -- Detecting CXX compiler ABI info
+[  331s] -- Detecting CXX compiler ABI info - done
+[  331s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  331s] -- Detecting CXX compile features
+[  331s] -- Detecting CXX compile features - done
+[  331s] /usr/bin/bash: line 1: git: command not found
+[  331s] -- BUILD_TYPE = Release
+[  331s] -- CMAKE_BUILD_TYPE is Release
+[  331s] -- ENABLE_GCOV = OFF
+[  331s] -- ENABLE_EXPORT_API = OFF
+[  331s] -- static char* str_DCF_LIB_VERSION="DCF Release  compiled at 2024-03-18 07:02:19"
+[  331s] -- dcf_get_version
+[  331s] -- Configuring done
+[  332s] -- Generating done
+[  332s] CMake Warning:
+[  332s]   Manually-specified variables were not used by the project:
+[  332s] 
+[  332s]     USE32BIT
+[  332s] 
+[  332s] 
+[  332s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/DCF-1.0.0
+[  332s] + /usr/bin/make -O -j24 V=1 VERBOSE=1 all -s -j24
+[  335s] [ 17%] Building C object src/callback/CMakeFiles/callback.dir/cb_func.c.o
+[  335s] [ 35%] Built target callback
+[  336s] [  4%] Building C object src/utils/CMakeFiles/utils.dir/util_error.c.o
+[  336s] [ 17%] Building C object src/metadata/CMakeFiles/metadata.dir/md_change.c.o
+[  336s] [  7%] Building C object src/utils/CMakeFiles/utils.dir/util_perf_stat.c.o
+[  336s] [ 23%] Building C object src/election/CMakeFiles/election.dir/elc_msg_pack.c.o
+[  337s] [ 27%] Building C object src/metadata/CMakeFiles/metadata.dir/md_store.c.o
+[  337s] [ 11%] Building C object src/replication/CMakeFiles/replication.dir/rep_msg_pack.c.o
+[  337s] [ 17%] Building C object src/replication/CMakeFiles/replication.dir/rep_monitor.c.o
+[  337s] [ 35%] Building C object src/common/CMakeFiles/common.dir/cm_defines/cm_error.c.o
+[  337s] [  7%] Building C object src/utils/CMakeFiles/utils.dir/util_monitor.c.o
+[  338s] [ 33%] Building C object src/storage/CMakeFiles/storage.dir/batcher.c.o
+[  338s] [ 17%] Building C object src/replication/CMakeFiles/replication.dir/replication.c.o
+[  338s] [ 32%] Building C object src/metadata/CMakeFiles/metadata.dir/md_stream.c.o
+[  339s] [ 38%] Building C object src/common/CMakeFiles/common.dir/cm_concurrency/cm_signal.c.o
+[  339s] [ 29%] Building C object src/network/CMakeFiles/network.dir/mec/mec_agent.c.o
+[  339s] [ 10%] Building C object src/replication/CMakeFiles/replication.dir/rep_follower.c.o
+[  340s] [ 33%] Building C object src/election/CMakeFiles/election.dir/elc_msg_proc.c.o
+[  340s] [ 44%] Building C object src/common/CMakeFiles/common.dir/cm_concurrency/cm_spinlock.c.o
+[  340s] [ 33%] Building C object src/network/CMakeFiles/network.dir/mec/mec_api.c.o
+[  340s] [ 29%] Building C object src/metadata/CMakeFiles/metadata.dir/md_param.c.o
+[  340s] [  7%] Building C object src/utils/CMakeFiles/utils.dir/util_profile_stat.c.o
+[  340s] [ 64%] Built target utils
+[  340s] [ 33%] Building C object src/election/CMakeFiles/election.dir/elc_stream.c.o
+[  340s] [ 47%] Building C object src/common/CMakeFiles/common.dir/cm_concurrency/cm_sync.c.o
+[  340s] [ 36%] Building C object src/storage/CMakeFiles/storage.dir/meta_storage.c.o
+[  340s] [ 45%] Building C object src/common/CMakeFiles/common.dir/cm_concurrency/cm_thread.c.o
+[  341s] [  7%] Building C object src/replication/CMakeFiles/replication.dir/rep_common.c.o
+[  341s] In file included from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_thread.h:29,
+[  341s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_utils/cm_log.h:31,
+[  341s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_utils/cm_debug.h:32,
+[  341s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_types/cm_text_def.h:33,
+[  341s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_types/cm_text.h:28,
+[  341s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_time/cm_date_to_text.h:29,
+[  341s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_time/cm_date.h:35,
+[  341s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/replication/rep_common.h:28,
+[  341s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/replication/rep_common.c:25:
+[  341s] In function 'cm_atomic32_dec',
+[  341s]     inlined from 'stg_entry_dec_ref' at /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stg_manager.h:189:23:
+[  341s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_atomic.h:163:12: warning: '__sync_add_and_fetch_4' writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[  341s]   163 |     return __sync_add_and_fetch(val, -1);
+[  341s]       |            ^~~~~~~~~~~~~~~~~~~~
+[  341s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_atomic.h:163:12: warning: '__sync_add_and_fetch_4' writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[  341s] [ 58%] Building C object src/common/CMakeFiles/common.dir/cm_concurrency/cm_thread_pool.c.o
+[  342s] [ 17%] Building C object src/replication/CMakeFiles/replication.dir/rep_leader.c.o
+[  342s] In file included from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_thread.h:29,
+[  342s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stg_manager.h:31,
+[  342s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/replication/rep_leader.h:30,
+[  342s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/replication/rep_leader.c:25:
+[  342s] In function 'cm_atomic32_dec',
+[  342s]     inlined from 'stg_entry_dec_ref' at /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stg_manager.h:189:23:
+[  342s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_atomic.h:163:12: warning: '__sync_add_and_fetch_4' writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[  342s]   163 |     return __sync_add_and_fetch(val, -1);
+[  342s]       |            ^~~~~~~~~~~~~~~~~~~~
+[  342s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_atomic.h:163:12: warning: '__sync_add_and_fetch_4' writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[  342s] [ 39%] Building C object src/storage/CMakeFiles/storage.dir/segment.c.o
+[  342s] [ 75%] Built target replication
+[  343s] [ 41%] Building C object src/storage/CMakeFiles/storage.dir/stg_manager.c.o
+[  343s] [ 33%] Building C object src/metadata/CMakeFiles/metadata.dir/metadata.c.o
+[  343s] [ 51%] Building C object src/election/CMakeFiles/election.dir/election.c.o
+[  343s] [ 61%] Building C object src/common/CMakeFiles/common.dir/cm_struct/cm_bilist.c.o
+[  343s] [ 79%] Built target metadata
+[  343s] [ 33%] Building C object src/storage/CMakeFiles/storage.dir/log_storage.c.o
+[  343s] [ 69%] Building C object src/common/CMakeFiles/common.dir/cm_struct/cm_hash.c.o
+[  343s] [ 72%] Building C object src/common/CMakeFiles/common.dir/cm_time/cm_timer.c.o
+[  343s] [ 73%] Building C object src/common/CMakeFiles/common.dir/cm_time/cm_timezone.c.o
+[  343s] [ 79%] Built target election
+[  343s] [ 52%] Building C object src/network/CMakeFiles/network.dir/mec/mec_reactor.c.o
+[  343s] [ 54%] Building C object src/network/CMakeFiles/network.dir/protocol/cs_listener.c.o
+[  343s] [ 60%] Building C object src/common/CMakeFiles/common.dir/cm_network/cm_ip.c.o
+[  343s] [ 63%] Building C object src/common/CMakeFiles/common.dir/cm_struct/cm_chan.c.o
+[  343s] [ 55%] Building C object src/network/CMakeFiles/network.dir/protocol/cs_pipe.c.o
+[  344s] [ 94%] Building C object src/common/CMakeFiles/common.dir/lexer/dcf_oper.c.o
+[  345s] [ 80%] Building C object src/common/CMakeFiles/common.dir/cm_utils/cm_epoll.c.o
+[  345s] [ 70%] Building C object src/common/CMakeFiles/common.dir/cm_time/cm_date_to_text.c.o
+[  345s] [ 64%] Building C object src/network/CMakeFiles/network.dir/protocol/cs_tcp.c.o
+[  345s] [ 66%] Building C object src/network/CMakeFiles/network.dir/compress/compress.c.o
+[  345s] [ 75%] Building C object src/common/CMakeFiles/common.dir/cm_types/cm_binary.c.o
+[  345s] [ 67%] Building C object src/common/CMakeFiles/common.dir/cm_time/cm_date.c.o
+[  346s] [ 95%] Building C object src/common/CMakeFiles/common.dir/lexer/lang_error.c.o
+[  346s] [ 79%] Building C object src/common/CMakeFiles/common.dir/cm_utils/cm_checksum.c.o
+[  346s] [ 77%] Building C object src/common/CMakeFiles/common.dir/cm_types/cm_text.c.o
+[  346s] [ 92%] Building C object src/common/CMakeFiles/common.dir/lexer/dcf_word.c.o
+[  347s] [ 58%] Building C object src/network/CMakeFiles/network.dir/protocol/cs_ssl.c.o
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c: In function 'cs_ssl_last_err_string':
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c:157:9: warning: 'ERR_func_error_string' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]   157 |         const char *fstr = ERR_func_error_string(err);
+[  347s]       |         ^~~~~
+[  347s] In file included from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c:26:
+[  347s] /usr/include/openssl/err.h:459:35: note: declared here
+[  347s]   459 | OSSL_DEPRECATEDIN_3_0 const char *ERR_func_error_string(unsigned long e);
+[  347s]       |                                   ^~~~~~~~~~~~~~~~~~~~~
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c: In function 'get_dh3072':
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c:570:5: warning: 'DH_new' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]   570 |     dh = DH_new();
+[  347s]       |     ^~
+[  347s] In file included from /usr/include/openssl/dsa.h:51,
+[  347s]                  from /usr/include/openssl/x509.h:37,
+[  347s]                  from /usr/include/openssl/ssl.h:31,
+[  347s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c:25:
+[  347s] /usr/include/openssl/dh.h:203:27: note: declared here
+[  347s]   203 | OSSL_DEPRECATEDIN_3_0 DH *DH_new(void);
+[  347s]       |                           ^~~~~~
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c:577:5: warning: 'DH_set0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]   577 |     if ((p == NULL) || (g == NULL) || !DH_set0_pqg(dh, p, NULL, g)) {
+[  347s]       |     ^~
+[  347s] /usr/include/openssl/dh.h:259:27: note: declared here
+[  347s]   259 | OSSL_DEPRECATEDIN_3_0 int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+[  347s]       |                           ^~~~~~~~~~~
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c:578:9: warning: 'DH_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]   578 |         DH_free(dh);
+[  347s]       |         ^~~~~~~
+[  347s] /usr/include/openssl/dh.h:204:28: note: declared here
+[  347s]   204 | OSSL_DEPRECATEDIN_3_0 void DH_free(DH *dh);
+[  347s]       |                            ^~~~~~~
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c: In function 'cs_ssl_throw_error':
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c:919:5: warning: 'ERR_get_error_line_data' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]   919 |     while ((ret_code = ERR_get_error_line_data(&file, &line, &data, &flags))) {
+[  347s]       |     ^~~~~
+[  347s] /usr/include/openssl/err.h:425:15: note: declared here
+[  347s]   425 | unsigned long ERR_get_error_line_data(const char **file, int *line,
+[  347s]       |               ^~~~~~~~~~~~~~~~~~~~~~~
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c: In function 'cs_ssl_set_tmp_dh':
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c:1093:9: warning: 'DH_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]  1093 |         DH_free(dh);
+[  347s]       |         ^~~~~~~
+[  347s] /usr/include/openssl/dh.h:204:28: note: declared here
+[  347s]   204 | OSSL_DEPRECATEDIN_3_0 void DH_free(DH *dh);
+[  347s]       |                            ^~~~~~~
+[  347s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/network/protocol/cs_ssl.c:1097:5: warning: 'DH_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]  1097 |     DH_free(dh);
+[  347s]       |     ^~~~~~~
+[  347s] /usr/include/openssl/dh.h:204:28: note: declared here
+[  347s]   204 | OSSL_DEPRECATEDIN_3_0 void DH_free(DH *dh);
+[  347s]       |                            ^~~~~~~
+[  347s] [ 77%] Building C object src/common/CMakeFiles/common.dir/cm_types/cm_num.c.o
+[  347s] [ 89%] Building C object src/common/CMakeFiles/common.dir/json/ddes_json.c.o
+[  347s] [ 85%] Building C object src/common/CMakeFiles/common.dir/cm_utils/cm_memory.c.o
+[  347s] [ 86%] Building C object src/common/CMakeFiles/common.dir/cm_security/cm_cipher.c.o
+[  347s] [ 50%] Building C object src/network/CMakeFiles/network.dir/mec/mec_queue.c.o
+[  348s] [ 82%] Building C object src/common/CMakeFiles/common.dir/cm_utils/cm_file.c.o
+[  348s] [ 88%] Building C object src/common/CMakeFiles/common.dir/cm_utils/cm_utils.c.o
+[  348s] [ 42%] Building C object src/storage/CMakeFiles/storage.dir/stream.c.o
+[  348s] In file included from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_thread.h:29,
+[  348s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_utils/cm_log.h:31,
+[  348s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/batcher.h:28,
+[  348s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stream.h:28,
+[  348s]                  from /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stream.c:25:
+[  348s] In function 'cm_atomic32_inc',
+[  348s]     inlined from 'stream_find_from_entry_cache' at /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stream.c:114:11,
+[  348s]     inlined from 'stream_get_entry' at /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stream.c:374:26:
+[  348s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_atomic.h:158:12: warning: '__sync_add_and_fetch_4' writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[  348s]   158 |     return __sync_add_and_fetch(val, 1);
+[  348s]       |            ^~~~~~~~~~~~~~~~~~~~
+[  348s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_atomic.h:158:12: warning: '__sync_add_and_fetch_4' writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[  348s] In function 'cm_atomic32_inc',
+[  348s]     inlined from 'stream_find_from_entry_cache' at /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stream.c:114:11,
+[  348s]     inlined from 'stream_get_term' at /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stream.c:383:26:
+[  348s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_atomic.h:158:12: warning: '__sync_add_and_fetch_4' writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[  348s]   158 |     return __sync_add_and_fetch(val, 1);
+[  348s]       |            ^~~~~~~~~~~~~~~~~~~~
+[  348s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_atomic.h:158:12: warning: '__sync_add_and_fetch_4' writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[  348s] In function 'cm_atomic32_inc',
+[  348s]     inlined from 'stream_find_from_entry_cache' at /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stream.c:114:11,
+[  348s]     inlined from 'disk_thread_entry' at /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/storage/stream.c:515:34:
+[  348s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_atomic.h:158:12: warning: '__sync_add_and_fetch_4' writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[  348s]   158 |     return __sync_add_and_fetch(val, 1);
+[  348s]       |            ^~~~~~~~~~~~~~~~~~~~
+[  348s] [ 95%] Built target storage
+[  349s] [ 83%] Building C object src/common/CMakeFiles/common.dir/cm_utils/cm_log.c.o
+[  351s] [ 48%] Building C object src/network/CMakeFiles/network.dir/mec/mec_func.c.o
+[  351s] [ 95%] Built target network
+[  353s] [ 91%] Building C object src/common/CMakeFiles/common.dir/lexer/ddes_lexer.c.o
+[  353s] [ 95%] Built target common
+[  355s] [ 98%] Building C object src/CMakeFiles/dcf.dir/dcf_version.c.o
+[  366s] [ 98%] Building C object src/CMakeFiles/dcf.dir/dcf_interface.c.o
+[  368s] [100%] Linking C shared library ../output/lib/libdcf.so
+[  368s] /usr/bin/cc -fPIC  -g -ldl -pthread -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -O2 -DNDEBUG -pie -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -shared -Wl,-soname,libdcf.so -o ../output/lib/libdcf.so CMakeFiles/dcf.dir/dcf_interface.c.o CMakeFiles/dcf.dir/dcf_version.c.o common/CMakeFiles/common.dir/cm_defines/cm_error.c.o common/CMakeFiles/common.dir/cm_concurrency/cm_signal.c.o common/CMakeFiles/common.dir/cm_concurrency/cm_spinlock.c.o common/CMakeFiles/common.dir/cm_concurrency/cm_sync.c.o common/CMakeFiles/common.dir/cm_concurrency/cm_thread.c.o common/CMakeFiles/common.dir/cm_concurrency/cm_thread_pool.c.o common/CMakeFiles/common.dir/cm_network/cm_ip.c.o common/CMakeFiles/common.dir/cm_struct/cm_bilist.c.o common/CMakeFiles/common.dir/cm_struct/cm_chan.c.o common/CMakeFiles/common.dir/cm_struct/cm_hash.c.o common/CMakeFiles/common.dir/cm_time/cm_date.c.o common/CMakeFiles/common.dir/cm_time/cm_date_to_text.c.o common/CMakeFiles/common.dir/cm_time/cm_timer.c.o common/CMakeFiles/common.dir/cm_time/cm_timezone.c.o common/CMakeFiles/common.dir/cm_types/cm_binary.c.o common/CMakeFiles/common.dir/cm_types/cm_num.c.o common/CMakeFiles/common.dir/cm_types/cm_text.c.o common/CMakeFiles/common.dir/cm_utils/cm_checksum.c.o common/CMakeFiles/common.dir/cm_utils/cm_epoll.c.o common/CMakeFiles/common.dir/cm_utils/cm_file.c.o common/CMakeFiles/common.dir/cm_utils/cm_log.c.o common/CMakeFiles/common.dir/cm_utils/cm_memory.c.o common/CMakeFiles/common.dir/cm_utils/cm_utils.c.o common/CMakeFiles/common.dir/cm_security/cm_cipher.c.o common/CMakeFiles/common.dir/json/ddes_json.c.o common/CMakeFiles/common.dir/lexer/dcf_oper.c.o common/CMakeFiles/common.dir/lexer/dcf_word.c.o common/CMakeFiles/common.dir/lexer/ddes_lexer.c.o common/CMakeFiles/common.dir/lexer/lang_error.c.o utils/CMakeFiles/utils.dir/util_error.c.o utils/CMakeFiles/utils.dir/util_monitor.c.o utils/CMakeFiles/utils.dir/util_perf_stat.c.o utils/CMakeFiles/utils.dir/util_profile_stat.c.o callback/CMakeFiles/callback.dir/cb_func.c.o metadata/CMakeFiles/metadata.dir/md_change.c.o metadata/CMakeFiles/metadata.dir/md_param.c.o metadata/CMakeFiles/metadata.dir/md_store.c.o metadata/CMakeFiles/metadata.dir/md_stream.c.o metadata/CMakeFiles/metadata.dir/metadata.c.o election/CMakeFiles/election.dir/elc_msg_pack.c.o election/CMakeFiles/election.dir/elc_msg_proc.c.o election/CMakeFiles/election.dir/elc_stream.c.o election/CMakeFiles/election.dir/election.c.o network/CMakeFiles/network.dir/mec/mec_agent.c.o network/CMakeFiles/network.dir/mec/mec_api.c.o network/CMakeFiles/network.dir/mec/mec_func.c.o network/CMakeFiles/network.dir/mec/mec_queue.c.o network/CMakeFiles/network.dir/mec/mec_reactor.c.o network/CMakeFiles/network.dir/protocol/cs_listener.c.o network/CMakeFiles/network.dir/protocol/cs_pipe.c.o network/CMakeFiles/network.dir/protocol/cs_ssl.c.o network/CMakeFiles/network.dir/protocol/cs_tcp.c.o network/CMakeFiles/network.dir/compress/compress.c.o replication/CMakeFiles/replication.dir/rep_common.c.o replication/CMakeFiles/replication.dir/rep_follower.c.o replication/CMakeFiles/replication.dir/rep_leader.c.o replication/CMakeFiles/replication.dir/rep_monitor.c.o replication/CMakeFiles/replication.dir/rep_msg_pack.c.o replication/CMakeFiles/replication.dir/replication.c.o storage/CMakeFiles/storage.dir/batcher.c.o storage/CMakeFiles/storage.dir/log_storage.c.o storage/CMakeFiles/storage.dir/meta_storage.c.o storage/CMakeFiles/storage.dir/segment.c.o storage/CMakeFiles/storage.dir/stg_manager.c.o storage/CMakeFiles/storage.dir/stream.c.o   -L/home/abuild/rpmbuild/BUILD/DCF-1.0.0/library/huawei_security/lib  -L/home/abuild/rpmbuild/BUILD/DCF-1.0.0/library/lz4/lib  -L/home/abuild/rpmbuild/BUILD/DCF-1.0.0/library/zstd/lib  -L/home/abuild/rpmbuild/BUILD/DCF-1.0.0/library/openssl/lib  -L/home/abuild/rpmbuild/BUILD/DCF-1.0.0/library/cJSON/lib  -lboundscheck -llz4 -lzstd -lssl -lcrypto -lcjson -lpthread -lm -lrt 
+[  368s] [100%] Built target dcf
+[  368s] + RPM_EC=0
+[  368s] ++ jobs -p
+[  369s] + exit 0
+[  369s] Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.73lEJE
+[  369s] + umask 022
+[  369s] + cd /home/abuild/rpmbuild/BUILD
+[  369s] + '[' /home/abuild/rpmbuild/BUILDROOT/DCF-1.0.0-51.1.oe2309fix.riscv64 '!=' / ']'
+[  369s] + rm -rf /home/abuild/rpmbuild/BUILDROOT/DCF-1.0.0-51.1.oe2309fix.riscv64
+[  369s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/DCF-1.0.0-51.1.oe2309fix.riscv64
+[  369s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  369s] + mkdir /home/abuild/rpmbuild/BUILDROOT/DCF-1.0.0-51.1.oe2309fix.riscv64
+[  369s] + cd DCF-1.0.0
+[  369s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/DCF-1.0.0-51.1.oe2309fix.riscv64//usr/include
+[  369s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/DCF-1.0.0-51.1.oe2309fix.riscv64//usr/lib64
+[  369s] + cp src/interface/dcf_interface.h /home/abuild/rpmbuild/BUILDROOT/DCF-1.0.0-51.1.oe2309fix.riscv64//usr/include
+[  369s] + cp output/lib/libdcf.so /home/abuild/rpmbuild/BUILDROOT/DCF-1.0.0-51.1.oe2309fix.riscv64//usr/lib64
+[  369s] + /usr/lib/rpm/check-buildroot
+[  369s] + /usr/lib/rpm/brp-ldconfig
+[  370s] + /usr/lib/rpm/brp-compress
+[  370s] + /usr/lib/rpm/brp-strip /usr/bin/strip
+[  370s] + /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
+[  371s] + /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
+[  371s] + /usr/lib/rpm/brp-python-bytecompile /usr/bin/python 1 1
+[  372s] + /usr/lib/rpm/brp-python-hardlink
+[  372s] Processing files: DCF-1.0.0-51.1.oe2309fix.riscv64
+[  372s] Provides: DCF = 1.0.0-51.1.oe2309fix DCF(riscv-64) = 1.0.0-51.1.oe2309fix libdcf.so()(64bit)
+[  372s] Requires(interp): /bin/sh /bin/sh
+[  372s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[  372s] Requires(post): /bin/sh
+[  372s] Requires(preun): /bin/sh
+[  372s] Requires: ld-linux-riscv64-lp64d.so.1()(64bit) ld-linux-riscv64-lp64d.so.1(GLIBC_2.27)(64bit) libboundscheck.so()(64bit) libc.so.6()(64bit) libc.so.6(GLIBC_2.27)(64bit) libc.so.6(GLIBC_2.33)(64bit) libc.so.6(GLIBC_2.34)(64bit) libc.so.6(GLIBC_2.38)(64bit) libcjson.so.1()(64bit) libcrypto.so.3()(64bit) libcrypto.so.3(OPENSSL_3.0.0)(64bit) liblz4.so.1()(64bit) libm.so.6()(64bit) libm.so.6(GLIBC_2.27)(64bit) libssl.so.3()(64bit) libssl.so.3(OPENSSL_3.0.0)(64bit) libzstd.so.1()(64bit) rtld(GNU_HASH)
+[  372s] Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/abuild/rpmbuild/BUILDROOT/DCF-1.0.0-51.1.oe2309fix.riscv64
+[  373s] Wrote: /home/abuild/rpmbuild/SRPMS/DCF-1.0.0-51.1.oe2309fix.src.rpm
+[  373s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/DCF-1.0.0-51.1.oe2309fix.riscv64.rpm
+[  373s] Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.JjN3uT
+[  374s] + umask 022
+[  374s] + cd /home/abuild/rpmbuild/BUILD
+[  374s] + cd DCF-1.0.0
+[  374s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/DCF-1.0.0-51.1.oe2309fix.riscv64
+[  374s] + RPM_EC=0
+[  374s] ++ jobs -p
+[  374s] + exit 0
+[  374s] Executing(rmbuild): /bin/sh -e /var/tmp/rpm-tmp.lXcUvg
+[  374s] + umask 022
+[  374s] + cd /home/abuild/rpmbuild/BUILD
+[  374s] + rm -rf DCF-1.0.0 DCF-1.0.0.gemspec
+[  374s] + RPM_EC=0
+[  374s] ++ jobs -p
+[  374s] + exit 0
+[  374s] 
+[  374s] RPM build warnings:
+[  374s]     %patchN is deprecated (2 usages found), use %patch N (or %patch -P N)
+[  376s] ... checking for files with abuild user/group
+[  377s] Warning: mkbaselibs missing in build root, skipping baselibs
+[  377s] 
+[  377s] riscv64-oe2309-iscas-r750-docker-chroot-01-24c70g finished "build opengauss-dcf.spec" at Mon Mar 18 07:03:05 UTC 2024.
+[  377s] 
