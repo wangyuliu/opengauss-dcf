@@ -1,0 +1,95 @@
+From d9f173dc91f4544664443a8302e3eb42fb88fba8 Mon Sep 17 00:00:00 2001
+From: Jingyun Hua <huajingyun@loongson.cn>
+Date: Mon, 29 May 2023 02:16:31 +0000
+Subject: [PATCH] DCF-1.0.0:add loongarch64 support
+
+---
+ CMakeLists.txt                          | 4 ++--
+ src/common/cm_concurrency/cm_spinlock.h | 5 +++++
+ src/common/cm_concurrency/cm_thread.c   | 2 ++
+ src/common/cm_utils/cm_checksum.h       | 2 +-
+ src/common/cm_utils/cm_memory.h         | 6 ++++++
+ 5 files changed, 16 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 81d310b..c8ba6b5 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -89,7 +89,7 @@ if (UNIX)
+ 
+         add_compile_options(-mtune=cortex-a72 -fsigned-char -g -ggdb3 -march=armv8-a+crc -funwind-tables)
+     else ()
+-        add_compile_options(-msse4.2 )
++        add_compile_options()
+     endif ()
+     Add_Definitions(-DWSEC_COMPILE_CAC_OPENSSL -DWSEC_AES_GCM_SUPPORT -DWSEC_USE_OPENSSL_110)
+ else ()
+@@ -106,4 +106,4 @@ add_subdirectory(src)
+ OPTION(TEST "option for test module" ON)
+ if (TEST)
+     add_subdirectory(test)
+-endif()
+\ No newline at end of file
++endif()
+diff --git a/src/common/cm_concurrency/cm_spinlock.h b/src/common/cm_concurrency/cm_spinlock.h
+index 7965853..3b6d961 100644
+--- a/src/common/cm_concurrency/cm_spinlock.h
++++ b/src/common/cm_concurrency/cm_spinlock.h
+@@ -68,6 +68,11 @@ typedef struct st_spin_statis {
+     {                            \
+         __asm__ volatile("nop"); \
+     }
++#elif defined(__loongarch64)
++#define fas_cpu_pause() \
++	{			   \
++        __asm__ volatile("dbar 0"); \
++	}
+ #else
+ #define fas_cpu_pause()            \
+     {                              \
+diff --git a/src/common/cm_concurrency/cm_thread.c b/src/common/cm_concurrency/cm_thread.c
+index 2d0aa2a..0bbf502 100644
+--- a/src/common/cm_concurrency/cm_thread.c
++++ b/src/common/cm_concurrency/cm_thread.c
+@@ -296,6 +296,8 @@ uint32 cm_get_current_thread_id()
+ #define __SYS_GET_SPID 186
+ #elif (defined __aarch64__)
+ #define __SYS_GET_SPID 178
++#elif (defined __loongarch64)
++#define __SYS_GET_SPID 178
+ #endif
+ #define gettid() syscall(__SYS_GET_SPID)
+ 
+diff --git a/src/common/cm_utils/cm_checksum.h b/src/common/cm_utils/cm_checksum.h
+index 85bb9fa..3d8bd8f 100644
+--- a/src/common/cm_utils/cm_checksum.h
++++ b/src/common/cm_utils/cm_checksum.h
+@@ -26,7 +26,7 @@
+ 
+ #include "cm_defs.h"
+ 
+-#if defined(__arm__) || defined(__aarch64__)
++#if defined(__arm__) || defined(__aarch64__) || defined(__loongarch64)
+ #ifdef __has_include
+ #if __has_include(<arm_acle.h>)
+ #include <arm_acle.h>
+diff --git a/src/common/cm_utils/cm_memory.h b/src/common/cm_utils/cm_memory.h
+index 988b78e..4a1debf 100644
+--- a/src/common/cm_utils/cm_memory.h
++++ b/src/common/cm_utils/cm_memory.h
+@@ -56,6 +56,12 @@ extern "C" {
+         __asm__ volatile("dmb ish" ::     \
+                              : "memory"); \
+     }
++#elif defined(__loongarch64)
++#define CM_MFENCE \
++	{				\
++        __asm__ volatile("dbar 0" ::     \
++                             : "memory"); \
++	}
+ #else
+ #define CM_MFENCE                         \
+     {                                     \
+-- 
+2.33.0
+

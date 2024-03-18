@@ -1,0 +1,69 @@
+From 645a5d63a1cbf866babdce9eade8d5719f62a7fc Mon Sep 17 00:00:00 2001
+From: misaka00251 <liuxin@iscas.ac.cn>
+Date: Fri, 28 Jul 2023 15:19:20 +0800
+Subject: [PATCH] Add riscv64 support
+
+---
+ CMakeLists.txt                          | 2 +-
+ src/common/cm_concurrency/cm_spinlock.h | 2 +-
+ src/common/cm_concurrency/cm_thread.c   | 2 +-
+ src/common/cm_utils/cm_checksum.h       | 2 +-
+ src/common/cm_utils/cm_memory.h         | 6 ++++++
+ 5 files changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0380198..89d8551 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -89,7 +89,7 @@ if (UNIX)
+ 
+         add_compile_options(-mtune=cortex-a72 -fsigned-char -g -ggdb3 -march=armv8-a+crc -funwind-tables)
+     else ()
+-        add_compile_options(-msse4.2 )
++        add_compile_options()
+     endif ()
+     Add_Definitions(-DWSEC_COMPILE_CAC_OPENSSL -DWSEC_AES_GCM_SUPPORT -DWSEC_USE_OPENSSL_110)
+ else ()
+diff --git a/src/common/cm_concurrency/cm_spinlock.h b/src/common/cm_concurrency/cm_spinlock.h
+index 7965853..c7ef986 100644
+--- a/src/common/cm_concurrency/cm_spinlock.h
++++ b/src/common/cm_concurrency/cm_spinlock.h
+@@ -37,7 +37,7 @@ extern "C" {
+ 
+ typedef volatile uint32 spinlock_t;
+ typedef volatile uint32 ip_spinlock_t;
+-#if defined(__arm__) || defined(__aarch64__)
++#if defined(__arm__) || defined(__aarch64__) || defined(_riscv)
+ #define GS_INIT_SPIN_LOCK(lock)                       \
+     {                                                 \
+         __atomic_store_n(&lock, 0, __ATOMIC_SEQ_CST); \
+diff --git a/src/common/cm_concurrency/cm_thread.c b/src/common/cm_concurrency/cm_thread.c
+index 2d0aa2a..fd5f0f1 100644
+--- a/src/common/cm_concurrency/cm_thread.c
++++ b/src/common/cm_concurrency/cm_thread.c
+@@ -294,7 +294,7 @@ uint32 cm_get_current_thread_id()
+ {
+ #if (defined __x86_64__)
+ #define __SYS_GET_SPID 186
+-#elif (defined __aarch64__)
++#elif (defined __aarch64__) || defined(__riscv)
+ #define __SYS_GET_SPID 178
+ #endif
+ #define gettid() syscall(__SYS_GET_SPID)
+diff --git a/src/common/cm_utils/cm_checksum.h b/src/common/cm_utils/cm_checksum.h
+index 85bb9fa..06e60ca 100644
+--- a/src/common/cm_utils/cm_checksum.h
++++ b/src/common/cm_utils/cm_checksum.h
+@@ -26,7 +26,7 @@
+ 
+ #include "cm_defs.h"
+ 
+-#if defined(__arm__) || defined(__aarch64__)
++#if defined(__arm__) || defined(__aarch64__) || defined(__riscv)
+ #ifdef __has_include
+ #if __has_include(<arm_acle.h>)
+ #include <arm_acle.h>
+diff --git a/src/common/cm_utils/cm_memory.h b/src/common/cm_utils/cm_memory.h
+index 988b78e..05520a6 100644
+2.39.2 (Apple Git-143)
+

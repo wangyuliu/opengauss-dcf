@@ -1,0 +1,4 @@
+version_control: gitee
+src_repo: opengauss/DCF
+tag_prefix: ^libdcf
+seperator: .

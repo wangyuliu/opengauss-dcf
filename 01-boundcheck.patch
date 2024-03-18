@@ -1,0 +1,80 @@
+diff -crN '--exclude=.git' DCF-1.0.0-org/CMakeLists.txt DCF/CMakeLists.txt
+*** DCF-1.0.0-org/CMakeLists.txt	2021-11-30 11:22:45.072192931 +0800
+--- DCF/CMakeLists.txt	2021-11-30 11:36:31.164889527 +0800
+***************
+*** 10,16 ****
+  set(CJSON_PATH "${DCF_LIBRARY}/cJSON/lib")
+  set(VERSION_SRC ${PROJECT_SOURCE_DIR}/src/dcf_version.c)
+  
+! set(vpp_libsecurec "securec")
+  
+  set(CMAKE_INSTALL_PREFIX $ENV{dcf_install_prefix})
+  
+--- 10,16 ----
+  set(CJSON_PATH "${DCF_LIBRARY}/cJSON/lib")
+  set(VERSION_SRC ${PROJECT_SOURCE_DIR}/src/dcf_version.c)
+  
+! set(vpp_libsecurec "boundscheck")
+  
+  set(CMAKE_INSTALL_PREFIX $ENV{dcf_install_prefix})
+  
+diff -crN '--exclude=.git' DCF-1.0.0-org/src/dcf_interface.c DCF/src/dcf_interface.c
+*** DCF-1.0.0-org/src/dcf_interface.c	2021-11-30 11:22:45.080193015 +0800
+--- DCF/src/dcf_interface.c	2021-11-30 11:37:16.053362085 +0800
+***************
+*** 38,44 ****
+  #include "elc_stream.h"
+  #include "util_perf_stat.h"
+  #include "cm_ip.h"
+! #include "cJSON.h"
+  #include "util_profile_stat.h"
+  #include "stream.h"
+  #include "cb_func.h"
+--- 38,44 ----
+  #include "elc_stream.h"
+  #include "util_perf_stat.h"
+  #include "cm_ip.h"
+! #include "cjson/cJSON.h"
+  #include "util_profile_stat.h"
+  #include "stream.h"
+  #include "cb_func.h"
+diff -crN '--exclude=.git' DCF-1.0.0-org/src/metadata/metadata.c DCF/src/metadata/metadata.c
+*** DCF-1.0.0-org/src/metadata/metadata.c	2021-11-30 11:22:45.080193015 +0800
+--- DCF/src/metadata/metadata.c	2021-11-30 11:37:34.153552633 +0800
+***************
+*** 32,38 ****
+  #include "md_stream.h"
+  #include "md_param.h"
+  #include "md_store.h"
+! #include "cJSON.h"
+  
+  #ifdef __cplusplus
+  extern "C" {
+--- 32,38 ----
+  #include "md_stream.h"
+  #include "md_param.h"
+  #include "md_store.h"
+! #include "cjson/cJSON.h"
+  
+  #ifdef __cplusplus
+  extern "C" {
+diff -crN '--exclude=.git' DCF-1.0.0-org/src/utils/util_profile_stat.h DCF/src/utils/util_profile_stat.h
+*** DCF-1.0.0-org/src/utils/util_profile_stat.h	2021-11-30 11:22:45.084193057 +0800
+--- DCF/src/utils/util_profile_stat.h	2021-11-30 11:37:25.201458391 +0800
+***************
+*** 37,43 ****
+  #include "cm_num.h"
+  #include "cm_latch.h"
+  #include "cm_file.h"
+! #include "cJSON.h"
+  
+  
+  #define MAX_ITEM_COUNT 100
+--- 37,43 ----
+  #include "cm_num.h"
+  #include "cm_latch.h"
+  #include "cm_file.h"
+! #include "cjson/cJSON.h"
+  
+  
+  #define MAX_ITEM_COUNT 100

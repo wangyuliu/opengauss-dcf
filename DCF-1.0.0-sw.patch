@@ -1,0 +1,76 @@
+diff -Nuar DCF-1.0.0.org/CMakeLists.txt DCF-1.0.0.sw/CMakeLists.txt
+--- DCF-1.0.0.org/CMakeLists.txt	2022-06-13 11:22:02.120000000 +0000
++++ DCF-1.0.0.sw/CMakeLists.txt	2022-06-13 11:22:51.510000000 +0000
+@@ -89,7 +89,7 @@
+ 
+         add_compile_options(-mtune=cortex-a72 -fsigned-char -g -ggdb3 -march=armv8-a+crc -funwind-tables)
+     else ()
+-        add_compile_options(-msse4.2 )
++        add_compile_options( )
+     endif ()
+     Add_Definitions(-DWSEC_COMPILE_CAC_OPENSSL -DWSEC_AES_GCM_SUPPORT -DWSEC_USE_OPENSSL_110)
+ else ()
+@@ -106,4 +106,4 @@
+ OPTION(TEST "option for test module" ON)
+ if (TEST)
+     add_subdirectory(test)
+-endif()
+\ No newline at end of file
++endif()
+diff -Nuar DCF-1.0.0.org/src/common/cm_concurrency/cm_spinlock.h DCF-1.0.0.sw/src/common/cm_concurrency/cm_spinlock.h
+--- DCF-1.0.0.org/src/common/cm_concurrency/cm_spinlock.h	2022-06-13 11:22:02.090000000 +0000
++++ DCF-1.0.0.sw/src/common/cm_concurrency/cm_spinlock.h	2022-06-13 16:12:03.530000000 +0000
+@@ -68,6 +68,9 @@
+     {                            \
+         __asm__ volatile("nop"); \
+     }
++#elif defined(__sw_64__)
++#define fas_cpu_pause() \
++	{}
+ #else
+ #define fas_cpu_pause()            \
+     {                              \
+diff -Nuar DCF-1.0.0.org/src/common/cm_concurrency/cm_thread.c DCF-1.0.0.sw/src/common/cm_concurrency/cm_thread.c
+--- DCF-1.0.0.org/src/common/cm_concurrency/cm_thread.c	2022-06-13 11:22:02.100000000 +0000
++++ DCF-1.0.0.sw/src/common/cm_concurrency/cm_thread.c	2022-06-13 16:39:23.220000000 +0000
+@@ -296,6 +296,8 @@
+ #define __SYS_GET_SPID 186
+ #elif (defined __aarch64__)
+ #define __SYS_GET_SPID 178
++#elif (defined __sw_64__)
++#define __SYS_GET_SPID 378
+ #endif
+ #define gettid() syscall(__SYS_GET_SPID)
+ 
+diff -Nuar DCF-1.0.0.org/src/common/cm_utils/cm_checksum.h DCF-1.0.0.sw/src/common/cm_utils/cm_checksum.h
+--- DCF-1.0.0.org/src/common/cm_utils/cm_checksum.h	2022-06-13 11:22:02.100000000 +0000
++++ DCF-1.0.0.sw/src/common/cm_utils/cm_checksum.h	2022-06-13 16:33:54.130000000 +0000
+@@ -26,7 +26,7 @@
+ 
+ #include "cm_defs.h"
+ 
+-#if defined(__arm__) || defined(__aarch64__)
++#if defined(__arm__) || defined(__aarch64__) || defined(__sw_64__)
+ #ifdef __has_include
+ #if __has_include(<arm_acle.h>)
+ #include <arm_acle.h>
+diff -Nuar DCF-1.0.0.org/src/common/cm_utils/cm_memory.h DCF-1.0.0.sw/src/common/cm_utils/cm_memory.h
+--- DCF-1.0.0.org/src/common/cm_utils/cm_memory.h	2022-06-13 11:22:02.100000000 +0000
++++ DCF-1.0.0.sw/src/common/cm_utils/cm_memory.h	2022-06-13 16:10:02.430000000 +0000
+@@ -50,12 +50,15 @@
+         __asm {mfence }  \
+     }
+ #endif
+-#elif defined(__arm__) || defined(__aarch64__)
++#elif defined(__arm__) || defined(__aarch64__) 
+ #define CM_MFENCE                         \
+     {                                     \
+         __asm__ volatile("dmb ish" ::     \
+                              : "memory"); \
+     }
++#elif defined(__sw_64__)
++#define CM_MFENCE \
++	{}	
+ #else
+ #define CM_MFENCE                         \
+     {                                     \
