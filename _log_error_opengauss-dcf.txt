@@ -1,0 +1,559 @@
+[    0s] Memory limit set to 181648910KB
+[    0s] Using BUILD_ROOT=/obs/cache/worker/root_67
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing docker build
+[    0s] 
+[    0s] 
+[    0s] oerv-obs-10 started "build _service:tar_scm:opengauss-dcf.spec" at Mon Mar 18 14:40:48 UTC 2024.
+[    0s] 
+[    0s] Building opengauss-dcf for project 'openEuler:24.03' repository 'mainline_riscv64' arch 'riscv64' srcmd5 '76c50572c40b6d660a7cf4d8ec4b816d'
+[    0s] 
+[    0s] processing recipe /obs/cache/worker/root_67/.build-srcdir/_service:tar_scm:opengauss-dcf.spec ...
+[    0s] running changelog2spec --target rpm --file /obs/cache/worker/root_67/.build-srcdir/_service:tar_scm:opengauss-dcf.spec
+[    0s] init_buildsystem --configdir /obs/run/worker/worker/67/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /obs/cache/worker/root_67/.build.rpmlist /obs/cache/worker/root_67/.build-srcdir/_service:tar_scm:opengauss-dcf.spec build ...
+[    3s] cycle: filesystem -> bash
+[    3s]   breaking dependency filesystem -> bash
+[    3s] cycle: rpm-libs -> rpm
+[    3s]   breaking dependency rpm -> rpm-libs
+[    3s] cycle: perl-libs -> perl-Carp
+[    3s]   breaking dependency perl-libs -> perl-Carp
+[    3s] cycle: perl-libs -> perl-Exporter
+[    3s]   breaking dependency perl-Exporter -> perl-libs
+[    3s] cycle: perl-libs -> perl-Exporter -> perl-Carp
+[    3s]   breaking dependency perl-Carp -> perl-libs
+[    3s] cycle: perl-Exporter -> perl-Carp
+[    3s]   breaking dependency perl-Exporter -> perl-Carp
+[    3s] cycle: perl -> perl-PathTools
+[    3s]   breaking dependency perl -> perl-PathTools
+[    3s] cycle: perl -> perl-File-Path -> perl-PathTools
+[    3s]   breaking dependency perl -> perl-File-Path
+[    3s] cycle: perl-constant -> perl
+[    3s]   breaking dependency perl -> perl-constant
+[    3s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[    3s]   breaking dependency perl-File-Temp -> perl-PathTools
+[    3s] cycle: perl -> perl-File-Temp
+[    3s]   breaking dependency perl-File-Temp -> perl
+[    3s] cycle: perl -> perl-File-Temp -> perl-File-Path -> perl-PathTools
+[    3s]   breaking dependency perl-File-Temp -> perl-File-Path
+[    3s] cycle: perl-constant -> perl -> perl-File-Temp
+[    3s]   breaking dependency perl -> perl-File-Temp
+[    3s] [1/32] preinstalling filesystem...
+[    4s] [2/32] preinstalling glibc...
+[    4s] [3/32] preinstalling libatomic...
+[    4s] [4/32] preinstalling libatomic_ops...
+[    4s] [5/32] preinstalling libdb...
+[    4s] [6/32] preinstalling libgpg-error...
+[    4s] [7/32] preinstalling lz4...
+[    4s] [8/32] preinstalling pcre2...
+[    4s] [9/32] preinstalling xz-libs...
+[    5s] [10/32] preinstalling zlib...
+[    5s] [11/32] preinstalling zstd...
+[    5s] [12/32] preinstalling attr...
+[    5s] [13/32] preinstalling bash...
+[    6s] [14/32] preinstalling pesign-obs-integration...
+[    6s] [15/32] preinstalling selinux-policy-targeted...
+[    7s] [16/32] preinstalling bzip2...
+[    7s] [17/32] preinstalling cmake...
+[    8s] [18/32] preinstalling compat-openssl11-libs...
+[    8s] [19/32] preinstalling libacl...
+[    8s] [20/32] preinstalling libcap...
+[    8s] [21/32] preinstalling libgcrypt...
+[    8s] [22/32] preinstalling libselinux...
+[    8s] [23/32] preinstalling lua...
+[    8s] [24/32] preinstalling openssl-libs...
+[    9s] [25/32] preinstalling popt...
+[    9s] [26/32] preinstalling iproute...
+[    9s] [27/32] preinstalling systemd-libs...
+[    9s] [28/32] preinstalling rpm...
+[    9s] [29/32] preinstalling dbus-libs...
+[    9s] [30/32] preinstalling dhcp...
+[    9s] [31/32] preinstalling rpm-libs...
+[    9s] [32/32] preinstalling digest-list-tools...
+[   10s] 
+[   10s] [1/21] preinstalling coreutils...
+[   10s] [2/21] preinstalling libsmartcols...
+[   10s] [3/21] preinstalling libuuid...
+[   10s] [4/21] preinstalling libxcrypt...
+[   10s] [5/21] preinstalling ncurses-libs...
+[   10s] [6/21] preinstalling pcre...
+[   10s] [7/21] preinstalling grep...
+[   10s] [8/21] preinstalling libblkid...
+[   11s] [9/21] preinstalling libmount...
+[   11s] [10/21] preinstalling util-linux...
+[   11s] [11/21] preinstalling perl-Exporter...
+[   11s] [12/21] preinstalling perl-Carp...
+[   11s] [13/21] preinstalling perl-libs...
+[   11s] [14/21] preinstalling perl-parent...
+[   12s] [15/21] preinstalling perl-Digest-MD5...
+[   12s] [16/21] preinstalling perl-Scalar-List-Utils...
+[   12s] [17/21] preinstalling perl...
+[   12s] [18/21] preinstalling perl-constant...
+[   12s] [19/21] preinstalling perl-PathTools...
+[   12s] [20/21] preinstalling perl-File-Temp...
+[   12s] [21/21] preinstalling perl-File-Path...
+[   12s] copying packages...
+[   13s] reordering...cycle: bash -> coreutils
+[   13s]   breaking dependency coreutils -> bash
+[   13s] cycle: bash -> coreutils -> info
+[   13s]   breaking dependency coreutils -> info
+[   13s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp -> pkgconf
+[   13s]   breaking dependency filesystem -> bash
+[   13s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp -> pkgconf
+[   13s]   breaking dependency coreutils -> gmp
+[   13s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[   13s]   breaking dependency coreutils -> glibc
+[   13s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[   13s]   breaking dependency coreutils -> libacl
+[   13s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[   13s]   breaking dependency coreutils -> attr
+[   13s] cycle: coreutils -> libcap -> bash
+[   13s]   breaking dependency libcap -> bash
+[   13s] cycle: coreutils -> libcap
+[   13s]   breaking dependency coreutils -> libcap
+[   13s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[   13s]   breaking dependency coreutils -> openssl-libs
+[   13s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libselinux
+[   13s]   breaking dependency libselinux -> glibc
+[   13s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libselinux -> pcre2
+[   13s]   breaking dependency glibc -> basesystem
+[   13s] cycle: glibc -> glibc-common -> bash -> coreutils -> libselinux -> pcre2
+[   13s]   breaking dependency glibc-common -> bash
+[   13s] cycle: glibc -> glibc-common -> coreutils -> libselinux -> pcre2
+[   13s]   breaking dependency glibc-common -> coreutils
+[   13s] cycle: glibc -> glibc-common
+[   13s]   breaking dependency glibc-common -> glibc
+[   13s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[   13s]   breaking dependency pcre2 -> glibc
+[   13s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[   13s]   breaking dependency readline -> glibc
+[   13s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   13s]   breaking dependency libselinux -> pcre2
+[   13s] cycle: libselinux -> libsepol -> bash -> coreutils
+[   13s]   breaking dependency bash -> coreutils
+[   13s] cycle: libselinux -> libsepol -> bash -> filesystem -> coreutils
+[   13s]   breaking dependency libsepol -> bash
+[   13s] cycle: libselinux -> libsepol -> coreutils
+[   13s]   breaking dependency libsepol -> coreutils
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[   13s]   breaking dependency glibc -> glibc-common
+[   13s] cycle: glibc -> filesystem -> coreutils -> libselinux -> libsepol
+[   13s]   breaking dependency filesystem -> coreutils
+[   13s] cycle: filesystem -> setup -> openEuler-release -> bash
+[   13s]   breaking dependency filesystem -> setup
+[   13s] cycle: glibc -> filesystem -> ncurses-libs
+[   13s]   breaking dependency ncurses-libs -> glibc
+[   13s] cycle: openssl-libs -> crypto-policies -> python3
+[   13s]   breaking dependency python3 -> openssl-libs
+[   13s] cycle: crypto-policies -> python3 -> libnsl2 -> libtirpc -> krb5-libs
+[   13s]   breaking dependency python3 -> libnsl2
+[   13s] cycle: crypto-policies -> python3 -> libtirpc -> krb5-libs
+[   13s]   breaking dependency python3 -> libtirpc
+[   13s] cycle: pam -> libpwquality
+[   13s]   breaking dependency pam -> libpwquality
+[   13s] cycle: rpm -> rpm-libs
+[   13s]   breaking dependency rpm -> rpm-libs
+[   13s] cycle: perl-libs -> perl-Carp
+[   13s]   breaking dependency perl-libs -> perl-Carp
+[   13s] cycle: perl-libs -> perl-Exporter
+[   13s]   breaking dependency perl-libs -> perl-Exporter
+[   13s] cycle: perl-Carp -> perl-Exporter
+[   13s]   breaking dependency perl-Exporter -> perl-Carp
+[   13s] cycle: libxcrypt-devel -> glibc-devel
+[   13s]   breaking dependency glibc-devel -> libxcrypt-devel
+[   13s] cycle: cmake-data -> cmake
+[   13s]   breaking dependency cmake -> cmake-data
+[   13s] cycle: nss-util -> nss
+[   13s]   breaking dependency nss -> nss-util
+[   13s] cycle: nss-softokn -> nss-util -> nss
+[   13s]   breaking dependency nss -> nss-softokn
+[   13s] cycle: selinux-policy-targeted -> selinux-policy
+[   13s]   breaking dependency selinux-policy -> selinux-policy-targeted
+[   13s] cycle: perl-PathTools -> perl
+[   13s]   breaking dependency perl -> perl-PathTools
+[   13s] cycle: perl-File-Path -> perl-PathTools -> perl
+[   13s]   breaking dependency perl -> perl-File-Path
+[   13s] cycle: perl -> perl-constant
+[   13s]   breaking dependency perl -> perl-constant
+[   13s] cycle: perl-PathTools -> perl -> perl-File-Temp
+[   13s]   breaking dependency perl -> perl-File-Temp
+[   13s] cycle: device-mapper -> systemd -> cryptsetup
+[   13s]   breaking dependency systemd -> cryptsetup
+[   13s] done
+[   13s] Warning: cross compile not possible due to missing static binaries. please install build-initvm package for that purpose.
+[   13s]          check that the right architecture is available for your build host, you need  for this one.
+[   13s] booting docker...
+[   13s] 
+[   14s] 2nd stage started in virtual machine
+[   14s] machine type: riscv64
+[   14s] Linux version: 6.7.5-200.fc39.x86_64 #1 SMP PREEMPT_DYNAMIC Sat Feb 17 17:20:08 UTC 2024
+[   14s] Time: Mon Mar 18 14:41:02 UTC 2024
+[   14s] WARNING: udev not running, creating extra device nodes
+[   15s] processing recipe /.build-srcdir/_service:tar_scm:opengauss-dcf.spec ...
+[   15s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/_service:tar_scm:opengauss-dcf.spec build ...
+[   15s] initializing rpm db...
+[   15s] querying package ids...
+[   23s] [1/208] installing cmake-filesystem-3.27.9-2.oe2403
+[   26s] [2/208] installing fuse-common-3.16.2-1.oe2403
+[   30s] [3/208] installing kernel-headers-6.6.0-12.0.0.8.oe2403
+[   45s] [4/208] installing ncurses-base-6.4-8.oe2403
+[   50s] [5/208] installing openEuler-gpg-keys-1.0-3.1.oe2309
+[   52s] [6/208] installing python-setuptools-69.1.0-1.oe2403
+[   57s] [7/208] installing qt5-srpm-macros-5.15.10-2.oe2309
+[   62s] [8/208] installing tzdata-2024a-1.oe2403
+[   70s] [9/208] installing openEuler-repos-1.0-3.1.oe2309
+[   78s] [10/208] installing ncurses-libs-6.4-8.oe2403
+[   80s] [11/208] installing readline-8.2-2.oe2403
+[   85s] [12/208] installing filesystem-3.16-5.oe2309
+[   89s] warning: group mail does not exist - using root
+[   90s] [13/208] installing emacs-filesystem-1:29.1-1.oe2403
+[   95s] [14/208] installing libgcc-12.3.1-17.oe2403
+[   99s] [15/208] installing pcre2-10.42-6.oe2403
+[  103s] [16/208] installing glibc-2.38-22.oe2403
+[  111s] [17/208] installing brotli-1.1.0-1.oe2403
+[  116s] [18/208] installing cjson-1.7.15-3.oe2403
+[  122s] [19/208] installing cpio-2.14-3.oe2403
+[  132s] [20/208] installing diffutils-3.10-2.oe2403
+[  136s] [21/208] installing expat-2.6.0-1.oe2403
+[  141s] [22/208] installing ipcalc-1.0.3-1.oe2403
+[  149s] [23/208] installing jansson-2.14-3.oe2403
+[  155s] [24/208] installing json-c-0.17-1.oe2403
+[  160s] [25/208] installing keyutils-libs-1.6.3-5.oe2403
+[  163s] [26/208] installing libargon2-20190702-3.oe2403
+[  170s] [27/208] installing libatomic-12.3.1-17.oe2403
+[  176s] [28/208] installing libatomic_ops-7.8.2-2.oe2403
+[  184s] [29/208] installing libcap-ng-0.8.3-1.oe2403
+[  188s] [30/208] installing libev-4.33-3.oe2403
+[  192s] [31/208] installing libffi-3.4.4-3.oe2403
+[  198s] [32/208] installing libgomp-12.3.1-17.oe2403
+[  204s] [33/208] installing libgpg-error-1.47-1.oe2403
+[  211s] [34/208] installing libmnl-1.0.5-2.oe2403
+[  221s] [35/208] installing libnfnetlink-1.0.2-2.oe2403
+[  229s] [36/208] installing libnghttp2-1.58.0-1.oe2403
+[  237s] [37/208] installing libpcap-14:1.10.4-1.oe2403
+[  247s] [38/208] installing libsigsegv-2.14-1.oe2403
+[  254s] [39/208] installing libsmartcols-2.39.1-4.oe2403
+[  262s] [40/208] installing libtasn1-4.19.0-1.oe2403
+[  264s] [41/208] installing libtool-ltdl-2.4.7-3.oe2403
+[  273s] [42/208] installing libunistring-1.1-2.oe2403
+[  280s] [43/208] installing libuuid-2.39.1-4.oe2403
+[  285s] [44/208] installing libuv-1:1.47.0-2.oe2403
+[  290s] [45/208] installing libxcrypt-4.4.36-1.oe2403
+[  292s] [46/208] installing lz4-1.9.4-2.oe2403
+[  296s] [47/208] installing nspr-4.35.0-2.oe2403
+[  299s] [48/208] installing pkgconf-1.9.5-1.oe2403
+[  307s] [49/208] installing which-2.21-15.oe2403
+[  311s] [50/208] installing xz-libs-5.6.0-1.oe2403
+[  317s] [51/208] installing zlib-1.3.1-1.oe2403
+[  323s] [52/208] installing attr-2.5.1-4.oe2403
+[  325s] [53/208] installing libstdc++-12.3.1-17.oe2403
+[  331s] [54/208] installing psmisc-23.6-1.oe2403
+[  335s] [55/208] installing gdbm-1:1.23-2.oe2403
+[  344s] [56/208] installing libsepol-3.5-2.oe2403
+[  356s] [57/208] installing bash-5.2.15-5.oe2403
+[  364s] [58/208] installing libstdc++-devel-12.3.1-17.oe2403
+[  382s] [59/208] installing audit-libs-1:3.1.2-1.oe2403
+[  384s] [60/208] installing cjson-devel-1.7.15-3.oe2403
+[  388s] [61/208] installing file-libs-5.45-1.oe2403
+[  394s] [62/208] installing gmp-1:6.3.0-2.oe2403
+[  399s] [63/208] installing libacl-2.3.1-1.oe2403
+[  403s] [64/208] installing libgcrypt-1.10.2-1.oe2403
+[  411s] [65/208] installing libpng-2:1.6.40-1.oe2403
+[  414s] [66/208] installing lz4-devel-1.9.4-2.oe2403
+[  417s] [67/208] installing p11-kit-0.25.0-2.oe2403
+[  421s] [68/208] installing cyrus-sasl-lib-2.1.28-2.oe2403
+[  424s] [69/208] installing fuse-2.9.9-11.oe2403
+[  427s] [70/208] installing gc-8.2.4-1.oe2403
+[  431s] [71/208] installing libdb-5.3.28-41.oe2403
+[  436s] [72/208] installing libnetfilter_conntrack-1.0.9-4.oe2403
+[  442s] [73/208] installing libselinux-3.5-2.oe2403
+[  447s] [74/208] installing libxml2-2.11.5-2.oe2403
+[  452s] [75/208] installing zstd-1.5.5-1.oe2403
+[  456s] [76/208] installing pcre-8.45-5.oe2403
+[  463s] [77/208] installing perl-libs-4:5.38.0-5.oe2403
+[  468s] [78/208] installing ncurses-6.4-8.oe2403
+[  484s] [79/208] installing perl-parent-1:0.241-1.oe2403
+[  501s] [80/208] installing isl-0.24-2.oe2403
+[  513s] [81/208] installing mpfr-4.2.1-1.oe2403
+[  537s] [82/208] installing perl-Exporter-5.77-1.oe2403
+[  552s] [83/208] installing zstd-devel-1.5.5-1.oe2403
+[  569s] [84/208] installing file-5.45-1.oe2403
+[  582s] [85/208] installing patch-2.7.6-20.oe2403
+[  593s] [86/208] installing sed-4.9-3.oe2403
+[  596s] [87/208] installing acl-2.3.1-1.oe2403
+[  601s] [88/208] installing iptables-libs-1.8.9-2.oe2403
+[  604s] [89/208] installing glibc-common-2.38-22.oe2403
+[  613s] [90/208] installing coreutils-9.4-2.oe2403
+[  622s] [91/208] installing crontabs-1.11-23.oe2309
+[  637s] [92/208] installing elfutils-default-yama-scope-0.190-2.oe2403
+[  657s] [93/208] installing perl-Carp-1.50-419.oe2403
+[  663s] [94/208] installing publicsuffix-list-20240108-1.oe2403
+[  672s] [95/208] installing bzip2-1.0.8-6.oe2403
+[  675s] [96/208] installing gzip-1.12-4.oe2403
+[  689s] [97/208] installing libboundscheck-v1.1.11-6.oe2403
+[  693s] [98/208] installing libmpc-1.3.1-1.oe2403
+[  702s] [99/208] installing libseccomp-2.5.4-2.oe2403
+[  710s] [100/208] installing perl-Digest-MD5-2.58-2.oe2403
+[  714s] [101/208] installing popt-1.19-2.oe2403
+[  722s] [102/208] installing grep-3.11-1.oe2403
+[  731s] [103/208] installing info-7.0.3-3.oe2403
+[  747s] [104/208] installing libblkid-2.39.1-4.oe2403
+[  759s] [105/208] installing libidn2-2.3.4-1.oe2403
+[  764s] [106/208] installing slang-2.3.3-2.oe2403
+[  771s] [107/208] installing tar-2:1.35-2.oe2403
+[  777s] [108/208] installing tcl-1:8.6.14-1.oe2403
+[  781s] [109/208] installing jsoncpp-1.9.5-3.oe2403
+[  794s] [110/208] installing lua-5.4.6-1.oe2403
+[  800s] [111/208] installing glibc-devel-2.38-22.oe2403
+[  810s] [112/208] installing gawk-5.2.2-1.oe2403
+[  821s] [113/208] installing guile-5:2.2.7-4.oe2403
+[  830s] [114/208] installing zip-3.0-32.oe2403
+[  841s] [115/208] installing libfdisk-2.39.1-4.oe2403
+[  849s] [116/208] installing libxcrypt-devel-4.4.36-1.oe2403
+[  851s] [117/208] installing newt-0.52.23-1.oe2403
+[  859s] [118/208] installing bc-1.07.1-12.oe2403
+[  868s] [119/208] installing libmount-2.39.1-4.oe2403
+[  879s] [120/208] installing unzip-6.0-51.oe2403
+[  885s] [121/208] installing cracklib-2.9.11-1.oe2403
+[  897s] [122/208] installing e2fsprogs-1.47.0-2.oe2403
+[  904s] [123/208] installing elfutils-libelf-0.190-2.oe2403
+[  911s] [124/208] installing findutils-2:4.9.0-1.oe2403
+[  921s] [125/208] installing libsemanage-3.5-1.oe2403
+[  929s] [126/208] installing sqlite-3.42.0-1.oe2403
+[  938s] [127/208] installing xz-5.6.0-1.oe2403
+[  944s] [128/208] installing libpsl-0.21.2-1.oe2403
+[  948s] [129/208] installing logrotate-3.21.0-1.oe2403
+[  953s] [130/208] installing make-1:4.4.1-1.oe2403
+[  958s] [131/208] installing perl-Scalar-List-Utils-4:1.63-1.oe2403
+[  964s] [132/208] installing cpp-12.3.1-17.oe2403
+[  973s] [133/208] installing libbpf-2:1.2.2-1.oe2403
+[  981s] [134/208] installing dwz-0.15-1.oe2403
+[  985s] [135/208] installing openEuler-release-20.03LTS-53.oe2403
+[  988s] [136/208] installing chkconfig-1.25-1.oe2403
+[  997s] [137/208] installing elfutils-libs-0.190-2.oe2403
+[ 1002s] [138/208] installing glib2-2.78.3-1.oe2403
+[ 1009s] [139/208] installing setup-2.14.5-1.oe2403
+[ 1021s] [140/208] installing binutils-2.41-3.oe2403
+[ 1031s] [141/208] installing elfutils-0.190-2.oe2403
+[ 1038s] [142/208] installing p11-kit-trust-0.25.0-2.oe2403
+[ 1043s] [143/208] installing babeltrace-1.5.11-1.oe2403
+[ 1048s] [144/208] installing iproute-1:6.6.0-2.oe2403
+[ 1052s] [145/208] installing basesystem-12-3.oe2309
+[ 1055s] [146/208] installing ca-certificates-2023.2.64-1.oe2403
+[ 1065s] [147/208] installing gcc-12.3.1-17.oe2403
+[ 1077s] [148/208] installing python-pip-wheel-23.3.1-1.oe2403
+[ 1088s] [149/208] installing gcc-c++-12.3.1-17.oe2403
+[ 1099s] [150/208] installing python3-3.11.6-2.oe2403
+[ 1118s] [151/208] installing crypto-policies-20230614-1.git5f3458e.oe2403
+[ 1122s] [152/208] installing gdb-headless-14.1-1.oe2403
+[ 1127s] [153/208] installing gdb-14.1-1.oe2403
+[ 1133s] [154/208] installing compat-openssl11-libs-1:1.1.1m-9.oe2403
+[ 1138s] [155/208] installing openssl-libs-1:3.0.12-3.oe2403
+[ 1143s] [156/208] installing nss-3.94.0-4.oe2403
+[ 1151s] [157/208] installing libevent-2.1.12-9.oe2403
+[ 1158s] [158/208] installing openssl-devel-1:3.0.12-3.oe2403
+[ 1173s] [159/208] installing openldap-2.6.5-4.oe2403
+[ 1181s] [160/208] installing fipscheck-1.5.0-10.oe2403
+[ 1188s] [161/208] installing kmod-libs-30-2.oe2403
+[ 1194s] [162/208] installing nss-util-3.94.0-4.oe2403
+[ 1200s] [163/208] installing openssl-1:3.0.12-3.oe2403
+[ 1203s] [164/208] installing libarchive-3.7.1-1.oe2403
+[ 1207s] [165/208] installing debugedit-5.0-6.oe2403
+[ 1214s] [166/208] installing libverto-0.3.2-3.oe2403
+[ 1219s] [167/208] installing nss-softokn-3.94.0-4.oe2403
+[ 1225s] [168/208] installing krb5-libs-1.21.2-1.oe2403
+[ 1231s] [169/208] installing libtirpc-1.3.4-1.oe2403
+[ 1238s] [170/208] installing libssh-0.10.5-2.oe2403
+[ 1242s] [171/208] installing libnsl2-2.0.1-1.oe2403
+[ 1249s] [172/208] installing libcurl-8.4.0-1.oe2403
+[ 1254s] [173/208] installing curl-8.4.0-1.oe2403
+[ 1265s] [174/208] installing tpm2-tss-4.0.1-1.oe2403
+[ 1268s] [175/208] installing pam-1.5.3-2.oe2403
+[ 1272s] [176/208] installing ima-evm-utils-libs-1.5-1.oe2403
+[ 1278s] [177/208] installing libpwquality-1.4.5-1.oe2403
+[ 1284s] [178/208] installing libcap-2.69-1.oe2403
+[ 1289s] [179/208] installing shadow-subid-devel-2:4.14.3-1.oe2403
+[ 1295s] [180/208] installing iputils-20221126-2.oe2403
+[ 1300s] [181/208] installing systemd-libs-255-5.oe2403
+[ 1304s] Detected system with incompatible nobody defined, creating /etc/systemd/dont-synthesize-nobody
+[ 1304s] [182/208] installing shadow-2:4.14.3-1.oe2403
+[ 1309s] [183/208] installing rpm-4.18.2-3.oe2403
+[ 1313s] [184/208] installing efi-srpm-macros-4-9.oe2403
+[ 1323s] [185/208] installing cmake-rpm-macros-3.27.9-2.oe2403
+[ 1328s] [186/208] installing dbus-libs-1:1.14.8-2.oe2403
+[ 1330s] [187/208] installing libutempter-1.2.1-3.oe2403
+[ 1335s] [188/208] installing rpm-libs-4.18.2-3.oe2403
+[ 1337s] [189/208] installing systemd-255-5.oe2403
+[ 1348s] [190/208] installing digest-list-tools-0.3.95-14.oe2403
+[ 1355s] [191/208] installing openEuler-rpm-config-30-50.oe2309
+[ 1365s] [192/208] installing cmake-3.27.9-2.oe2403
+[ 1377s] [193/208] installing dhcp-12:4.4.3-6.oe2403
+[ 1390s] [194/208] installing util-linux-2.39.1-4.oe2403
+[ 1404s] [195/208] installing cmake-data-3.27.9-2.oe2403
+[ 1413s] [196/208] installing device-mapper-8:1.02.195-6.oe2403
+[ 1424s] [197/208] installing perl-4:5.38.0-5.oe2403
+[ 1431s] [198/208] installing policycoreutils-3.5-1.oe2403
+[ 1441s] Created symlink /etc/systemd/system/multi-user.target.wants/restorecond.service -> /usr/lib/systemd/system/restorecond.service.
+[ 1441s] [199/208] installing rpm-build-4.18.2-3.oe2403
+[ 1449s] [200/208] installing perl-constant-1.33-422.oe2403
+[ 1455s] [201/208] installing pesign-obs-integration-10.1-4.oe2403
+[ 1459s] [202/208] installing selinux-policy-40.7-1.oe2403
+[ 1506s] [203/208] installing gcc_secure-1.0-0.12.oe2403
+[ 1517s] [204/208] installing cryptsetup-2.6.1-1.oe2403
+[ 1536s] [205/208] installing selinux-policy-targeted-40.7-1.oe2403
+[ 1553s] [206/208] installing perl-PathTools-3.89-1.oe2403
+[ 1559s] [207/208] installing perl-File-Path-2.18-2.oe2403
+[ 1566s] [208/208] installing perl-File-Temp-1:0.2311-3.oe2403
+[ 1573s] now finalizing build dir...
+[ 1574s] Error: ipv4: Address already assigned.
+[ 1575s] Error: ipv6: address already assigned.
+[ 1575s] Cannot find device "eth0"
+[ 1575s] 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+[ 1575s]     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+[ 1575s]     inet 127.0.0.1/8 scope host lo
+[ 1575s]        valid_lft forever preferred_lft forever
+[ 1575s]     inet6 ::1/128 scope host noprefixroute 
+[ 1575s]        valid_lft forever preferred_lft forever
+[ 1575s] 2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+[ 1575s]     link/ether 00:50:56:94:03:cd brd ff:ff:ff:ff:ff:ff
+[ 1575s]     altname enp2s1
+[ 1575s]     inet 10.240.115.130/20 brd 10.240.127.255 scope global noprefixroute ens33
+[ 1575s]        valid_lft forever preferred_lft forever
+[ 1575s]     inet6 fe80::250:56ff:fe94:3cd/64 scope link noprefixroute 
+[ 1575s]        valid_lft forever preferred_lft forever
+[ 1575s] 3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+[ 1575s]     link/ether 02:42:a0:86:df:22 brd ff:ff:ff:ff:ff:ff
+[ 1575s]     inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+[ 1575s]        valid_lft forever preferred_lft forever
+[ 1575s] default via 10.240.112.1 dev ens33 proto static metric 100 
+[ 1575s] 10.240.112.0/20 dev ens33 proto kernel scope link src 10.240.115.130 metric 100 
+[ 1575s] 172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+[ 1575s] PING 223.5.5.5 (223.5.5.5) 56(84) bytes of data.
+[ 1575s] 64 bytes from 223.5.5.5: icmp_seq=1 ttl=117 time=4.14 ms
+[ 1575s] 
+[ 1575s] --- 223.5.5.5 ping statistics ---
+[ 1575s] 1 packets transmitted, 1 received, 0% packet loss, time 0ms
+[ 1575s] rtt min/avg/max/mdev = 4.139/4.139/4.139/0.000 ms
+[ 1576s] Running build time source services...
+[ 1580s] -----------------------------------------------------------------
+[ 1580s] ----- building opengauss-dcf.spec (user abuild)
+[ 1580s] -----------------------------------------------------------------
+[ 1580s] -----------------------------------------------------------------
+[ 1580s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://oerv-obs-backend/openEuler:24.03/mainline_riscv64/76c50572c40b6d660a7cf4d8ec4b816d-opengauss-dcf' /home/abuild/rpmbuild/SOURCES/opengauss-dcf.spec
+[ 1581s] warning: %patchN is deprecated (2 usages found), use %patch N (or %patch -P N)
+[ 1581s] setting SOURCE_DATE_EPOCH=1690502400
+[ 1581s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.XNK3GO
+[ 1581s] + umask 022
+[ 1581s] + cd /home/abuild/rpmbuild/BUILD
+[ 1581s] + cd /home/abuild/rpmbuild/BUILD
+[ 1581s] + rm -rf DCF-1.0.0
+[ 1581s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/DCF-1.0.0.tar.gz
+[ 1581s] + STATUS=0
+[ 1581s] + '[' 0 -ne 0 ']'
+[ 1581s] + cd DCF-1.0.0
+[ 1581s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 1581s] + echo 'Patch #1 (01-boundcheck.patch):'
+[ 1581s] Patch #1 (01-boundcheck.patch):
+[ 1581s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[ 1581s] patching file CMakeLists.txt
+[ 1581s] patching file src/dcf_interface.c
+[ 1581s] patching file src/metadata/metadata.c
+[ 1581s] patching file src/utils/util_profile_stat.h
+[ 1581s] + echo 'Patch #4 (DCF-1.0.0-add-riscv64-support.patch):'
+[ 1581s] Patch #4 (DCF-1.0.0-add-riscv64-support.patch):
+[ 1581s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[ 1581s] patching file CMakeLists.txt
+[ 1581s] patching file src/common/cm_concurrency/cm_spinlock.h
+[ 1581s] patching file src/common/cm_concurrency/cm_thread.c
+[ 1581s] patching file src/common/cm_utils/cm_checksum.h
+[ 1581s] patching file src/common/cm_utils/cm_memory.h
+[ 1581s] + RPM_EC=0
+[ 1581s] ++ jobs -p
+[ 1581s] + exit 0
+[ 1582s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.6Y4zjN
+[ 1582s] + umask 022
+[ 1582s] + cd /home/abuild/rpmbuild/BUILD
+[ 1582s] + cd DCF-1.0.0
+[ 1582s] + cmake -DCMAKE_BUILD_TYPE=Release -DUSE32BIT=OFF -DTEST=OFF -DENABLE_EXPORT_API=OFF CMakeLists.txt
+[ 1583s] -- The C compiler identification is GNU 12.3.1
+[ 1585s] -- The CXX compiler identification is GNU 12.3.1
+[ 1586s] -- Detecting C compiler ABI info
+[ 1589s] -- Detecting C compiler ABI info - done
+[ 1589s] -- Check for working C compiler: /usr/bin/cc - skipped
+[ 1589s] -- Detecting C compile features
+[ 1589s] -- Detecting C compile features - done
+[ 1590s] -- Detecting CXX compiler ABI info
+[ 1593s] -- Detecting CXX compiler ABI info - done
+[ 1593s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[ 1593s] -- Detecting CXX compile features
+[ 1593s] -- Detecting CXX compile features - done
+[ 1593s] /usr/bin/bash: line 1: git: command not found
+[ 1593s] -- BUILD_TYPE = Release
+[ 1593s] -- CMAKE_BUILD_TYPE is Release
+[ 1593s] -- ENABLE_GCOV = OFF
+[ 1593s] -- ENABLE_EXPORT_API = OFF
+[ 1593s] -- static char* str_DCF_LIB_VERSION="DCF Release  compiled at 2024-03-18 15:07:21"
+[ 1593s] -- dcf_get_version
+[ 1593s] -- Configuring done (11.4s)
+[ 1594s] -- Generating done (0.4s)
+[ 1594s] CMake Warning:
+[ 1594s]   Manually-specified variables were not used by the project:
+[ 1594s] 
+[ 1594s]     USE32BIT
+[ 1594s] 
+[ 1594s] 
+[ 1594s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/DCF-1.0.0
+[ 1594s] + /usr/bin/make -O -j2 V=1 VERBOSE=1 all -s -j2
+[ 1596s] [  1%] Building C object src/utils/CMakeFiles/utils.dir/util_error.c.o
+[ 1597s] [  2%] Building C object src/common/CMakeFiles/common.dir/cm_defines/cm_error.c.o
+[ 1599s] [  5%] Building C object src/common/CMakeFiles/common.dir/cm_concurrency/cm_signal.c.o
+[ 1599s] [  4%] Building C object src/utils/CMakeFiles/utils.dir/util_monitor.c.o
+[ 1601s] [  7%] Building C object src/common/CMakeFiles/common.dir/cm_concurrency/cm_spinlock.c.o
+[ 1601s] [  8%] Building C object src/utils/CMakeFiles/utils.dir/util_perf_stat.c.o
+[ 1603s] [ 10%] Building C object src/common/CMakeFiles/common.dir/cm_concurrency/cm_sync.c.o
+[ 1605s] [ 13%] Building C object src/common/CMakeFiles/common.dir/cm_concurrency/cm_thread.c.o
+[ 1606s] [ 11%] Building C object src/utils/CMakeFiles/utils.dir/util_profile_stat.c.o
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h: Assembler messages:
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1606s] make[2]: *** [src/utils/CMakeFiles/utils.dir/build.make:118: src/utils/CMakeFiles/utils.dir/util_profile_stat.c.o] Error 1
+[ 1607s] make[1]: *** [CMakeFiles/Makefile2:456: src/utils/CMakeFiles/utils.dir/all] Error 2
+[ 1607s] make[1]: *** Waiting for unfinished jobs....
+[ 1607s] [ 14%] Building C object src/common/CMakeFiles/common.dir/cm_concurrency/cm_thread_pool.c.o
+[ 1609s] [ 16%] Building C object src/common/CMakeFiles/common.dir/cm_network/cm_ip.c.o
+[ 1609s] [ 17%] Building C object src/common/CMakeFiles/common.dir/cm_struct/cm_bilist.c.o
+[ 1612s] [ 20%] Building C object src/common/CMakeFiles/common.dir/cm_struct/cm_hash.c.o
+[ 1612s] [ 19%] Building C object src/common/CMakeFiles/common.dir/cm_struct/cm_chan.c.o
+[ 1612s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h: Assembler messages:
+[ 1612s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1612s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1612s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1612s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1612s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1612s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1612s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1612s] /home/abuild/rpmbuild/BUILD/DCF-1.0.0/src/common/cm_concurrency/cm_spinlock.h:169: Error: unrecognized opcode `pause', extension `zihintpause' required
+[ 1612s] make[2]: *** [src/common/CMakeFiles/common.dir/build.make:188: src/common/CMakeFiles/common.dir/cm_struct/cm_chan.c.o] Error 1
+[ 1612s] make[2]: *** Waiting for unfinished jobs....
+[ 1615s] [ 22%] Building C object src/common/CMakeFiles/common.dir/cm_time/cm_date.c.o
+[ 1615s] make[1]: *** [CMakeFiles/Makefile2:274: src/common/CMakeFiles/common.dir/all] Error 2
+[ 1615s] make: *** [Makefile:91: all] Error 2
+[ 1615s] error: Bad exit status from /var/tmp/rpm-tmp.6Y4zjN (%build)
+[ 1615s] 
+[ 1615s] RPM build warnings:
+[ 1615s]     %patchN is deprecated (2 usages found), use %patch N (or %patch -P N)
+[ 1615s]     Bad exit status from /var/tmp/rpm-tmp.6Y4zjN (%build)
+[ 1615s] 
+[ 1615s] RPM build errors:
+[ 1626s] 
+[ 1626s] oerv-obs-10 failed "build _service:tar_scm:opengauss-dcf.spec" at Mon Mar 18 15:07:54 UTC 2024.
+[ 1626s] 
